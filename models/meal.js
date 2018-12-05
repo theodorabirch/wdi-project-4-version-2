@@ -3,12 +3,15 @@ const mongoose = require('mongoose');
 const mealSchema = mongoose.Schema({
   user: {type: mongoose.Schema.ObjectId, ref: 'user'},
   date: Date,
-  serving: {type: mongoose.Schema.ObjectId, ref: 'food', required: true},
+  serving: {
+    food: {type: mongoose.Schema.ObjectId, ref: 'food', required: true},
+    quantity: Number
+  },
   name: [{
     type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack']
   }]
 });
-module.expots = mongoose.model('meal', mealSchema);
+module.exports = mongoose.model('meal', mealSchema);
 
 //Virtuals to be added
 
