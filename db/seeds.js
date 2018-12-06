@@ -12,19 +12,34 @@ const userIds = [
   '5be9860fcb16d525543ceda3'
 ];
 
-
-const exerciseData = [
+const userData = [
   {
-    type: 'Cycling',
-    intensity: 7.5
+    _id: userIds[0],
+    username: 'janedoe',
+    email: 'jane@app.com',
+    password: 'pass',
+    profilePicture: '',
+    forename: 'Jane',
+    surname: 'Doe',
+    age: 30,
+    sex: 'Female',
+    height: 161.6,
+    weight: 70.2
   }, {
-    type: 'Jogging',
-    intensity: 7.0
-  }, {
-    type: 'Swimming (Freestyle)',
-    intensity: 5.8
+    _id: userIds[1],
+    username: 'johndoe',
+    email: 'john@app.com',
+    password: 'pass',
+    profilePicture: '',
+    forename: 'John',
+    surname: 'Doe',
+    age: 30,
+    sex: 'Male',
+    height: 175.3,
+    weight: 83.6
   }
 ];
+
 
 const foodData = [
   {
@@ -62,31 +77,16 @@ const mealData = [
   }
 ];
 
-const userData = [
+const exerciseData = [
   {
-    _id: userIds[0],
-    username: 'janedoe',
-    email: 'jane@app.com',
-    password: 'pass',
-    profilePicture: '',
-    forename: 'Jane',
-    surname: 'Doe',
-    age: 30,
-    sex: 'Female',
-    height: 161.6,
-    weight: 70.2
+    type: 'Cycling',
+    intensity: 7.5
   }, {
-    _id: userIds[1],
-    username: 'johndoe',
-    email: 'john@app.com',
-    password: 'pass',
-    profilePicture: '',
-    forename: 'John',
-    surname: 'Doe',
-    age: 30,
-    sex: 'Male',
-    height: 175.3,
-    weight: 83.6
+    type: 'Jogging',
+    intensity: 7.0
+  }, {
+    type: 'Swimming (Freestyle)',
+    intensity: 5.8
   }
 ];
 
@@ -106,26 +106,27 @@ const workoutData = [
 
 mongoose.connect(dbURI);
 User.collection.drop();
-Exercise.collection.drop();
 Food.collection.drop();
 Meal.collection.drop();
+Exercise.collection.drop();
 Workout.collection.drop();
 
-Exercise.create(exerciseData)
-  .then(exercises => {
-    console.log(`${exercises.length} exercises created`);
+
+User.create(userData)
+  .then(users => {
+    console.log(`${users.length} users created`);
 
     Food.create(foodData)
       .then(foods => {
         console.log(`${foods.length} foods created`);
 
-        User.create(userData)
-          .then(users => {
-            console.log(`${users.length} users created`);
+        Meal.create(mealData)
+          .then(meals => {
+            console.log(`${meals.length} meals created`);
 
-            Meal.create(mealData)
-              .then(meals => {
-                console.log(`${meals.length} meals created`);
+            Exercise.create(exerciseData)
+              .then(exercises => {
+                console.log(`${exercises.length} exercises created`);
 
                 Workout.create(workoutData)
                   .then(workouts => {

@@ -43,6 +43,7 @@ router.route('/meals')
 // register route
 router.route('/register')
   .post(authController.register);
+
 // login route
 router.route('/login')
   .post(authController.login);
