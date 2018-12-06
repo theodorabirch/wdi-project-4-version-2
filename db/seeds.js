@@ -119,13 +119,13 @@ Exercise.create(exerciseData)
       .then(foods => {
         console.log(`${foods.length} foods created`);
 
-        Meal.create(mealData)
-          .then(meals => {
-            console.log(`${meals.length} meals created`);
+        User.create(userData)
+          .then(users => {
+            console.log(`${users.length} users created`);
 
-            User.create(userData)
-              .then(users => {
-                console.log(`${users.length} users created`);
+            Meal.create(mealData)
+              .then(meals => {
+                console.log(`${meals.length} meals created`);
 
                 Workout.create(workoutData)
                   .then(workouts => {
