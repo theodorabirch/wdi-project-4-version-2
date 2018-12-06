@@ -8,4 +8,4 @@ const foodSchema = mongoose.Schema({
   fatPer100g: Number
 });
 
-module.exports = mongoose.model('food', foodSchema);
+module.exports = mongoose.model('Food', foodSchema);

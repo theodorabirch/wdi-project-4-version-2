@@ -7,4 +7,4 @@ const workoutSchema = mongoose.Schema({
   duration: Number
 });
 
-module.exports = mongoose.model('workout', workoutSchema);
+module.exports = mongoose.model('Workout', workoutSchema);

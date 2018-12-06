@@ -11,7 +11,7 @@ const mealSchema = mongoose.Schema({
     type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack']
   }]
 });
-module.exports = mongoose.model('meal', mealSchema);
+module.exports = mongoose.model('Meal', mealSchema);
 
 //Virtuals to be added
 
