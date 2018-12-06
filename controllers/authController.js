@@ -13,10 +13,8 @@ function register(req, res, next) {
 
 // Login route
 function login(req, res, next) {
-  console.log('This is req.body.email', req.body.email);
   User.findOne({ email: req.body.email })
     .then(user => {
-      console.log('validatePassword', user);
       if (user && user.validatePassword(req.body.password)) {
         const token = jwt.sign({
           username: user.username,
