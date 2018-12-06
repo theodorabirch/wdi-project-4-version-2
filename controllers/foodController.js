@@ -2,7 +2,7 @@ const Food = require('../models/food');
 
 function foodCreateRoute(req, res, next) {
   Food.create(req.body)
-    .then(food => res.status(201).json(food))
+    .then(food => res.status(200).json(food))
     .catch(next);
 }
 
@@ -16,7 +16,7 @@ function foodUpdateRoute(req,res,next) {
   Food.findById(req.params.id)
     .then(food => food.set(req.body))
     .then(food => food.save())
-    .then(food => res.json(food))
+    .then(food => res.status(200).json(food))
     .catch(next);
 }
 

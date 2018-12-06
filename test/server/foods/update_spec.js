@@ -12,15 +12,12 @@ const foodIds = [
 ];
 
 const foodData = {
-  _id: foodIds[0],
   name: 'Chocolate Almonds',
   kCalsPer100g: 594,
   proteinPer100g: 18,
   carbsPer100g: 28,
   fatPer100g: 48
 };
-
-console.log('foodData after the const is:', foodData);
 
 let token;
 let foodId;
@@ -59,10 +56,9 @@ describe('Food UPDATE', () => {
   });
 
 
-  console.log('foodData after the beforeEach is:', foodData);
 
   it('should return a 401 response without a token', done => {
-    api.put('/api/foods')
+    api.put(`/api/food/${foodId}`)
       .end((err, res) => {
         expect(res.status).to.eq(401);
         done();
@@ -70,7 +66,7 @@ describe('Food UPDATE', () => {
   });
 
   it('should return a 200 response', done => {
-    api.put('/api/foods')
+    api.put(`/api/food/${foodId}`)
       .set('Authorization', `Bearer ${token}`)
       .send(foodData)
       .end((err, res) => {
@@ -80,7 +76,7 @@ describe('Food UPDATE', () => {
   });
 
   it('should return an object', done => {
-    api.put('/api/foods')
+    api.put(`/api/food/${foodId}`)
       .set('Authorization', `Bearer ${token}`)
       .send(foodData)
       .end((err, res) => {
@@ -89,14 +85,12 @@ describe('Food UPDATE', () => {
       });
   });
 
-  console.log('foodData before we check for correct data is:', foodData);
-
   it('should return the correct data', done => {
-    api.put('/api/foods')
+    api.put(`/api/food/${foodId}`)
       .set('Authorization', `Bearer ${token}`)
       .send(foodData)
       .end((err, res) => {
-        expect(res.body.name).to.not.eq(foodData.name);
+        expect(res.body.name).to.eq(foodData.name);
         expect(res.body.kCalsPer100g).to.eq(foodData.kCalsPer100g);
         expect(res.body.proteinPer100g).to.eq(foodData.proteinPer100g);
         expect(res.body.carbsPer100g).to.eq(foodData.carbsPer100g);
