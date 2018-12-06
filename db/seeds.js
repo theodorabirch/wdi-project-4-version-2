@@ -105,10 +105,10 @@ const workoutData = [
 ];
 
 mongoose.connect(dbURI);
+User.collection.drop();
 Exercise.collection.drop();
 Food.collection.drop();
 Meal.collection.drop();
-User.collection.drop();
 Workout.collection.drop();
 
 Exercise.create(exerciseData)
