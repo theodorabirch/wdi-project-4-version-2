@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 const userSchema = mongoose.Schema({
   username: { type: String, required: true },
@@ -15,5 +15,15 @@ const userSchema = mongoose.Schema({
   height: { type: Number, required: true },
   weight: { type: Number, required: true }
 });
+
+userSchema.pre('save', function() {
+  if(this.isModified('password')){
+    this.password = bcrypt.hashSync(this.password, 8);
+  }
+});
+
+userSchema.methods.validatePassword = function(attemptedPassword) {
+  return bcrypt.compareSync(attemptedPassword, this.password);
+};
 
 module.exports = mongoose.model('User', userSchema);

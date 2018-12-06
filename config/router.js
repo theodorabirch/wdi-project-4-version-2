@@ -14,10 +14,10 @@ router.route('/user/:id')
 
 //workout routes
 router.route('/workouts')
-  .post(workoutController.create);
+  .post(workoutController.create)
+  .get(workoutController.index);
 
 router.route('/workout/:id')
-  .get(workoutController.show)
   .put(workoutController.update)
   .delete(workoutController.delete);
 
@@ -27,7 +27,6 @@ router.route('/foods')
   .post(foodController.create);
 
 router.route('/food/:id')
-  .get(foodController.show)
   .put(foodController.update)
   .delete(foodController.delete);
 
@@ -38,7 +37,8 @@ router.route('/meals/:id')
   .delete(mealController.delete);
 
 router.route('/meals')
-  .post(mealController.create);
+  .post(mealController.create)
+  .get(mealController.index);
 
 // register route
 router.route('/register')
