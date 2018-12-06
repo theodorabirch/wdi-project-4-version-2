@@ -12,6 +12,18 @@ const userIds = [
   '5be9860fcb16d525543ceda3'
 ];
 
+const exerciseIds = [
+  '5c0910e9b7c0eb472d098b41',
+  '5c0910e9b7c0eb472d098b42',
+  '5c0910e9b7c0eb472d098b43'
+];
+
+const foodIds = [
+  '5c0910e9b7c0eb472d098b3e',
+  '5c0910e9b7c0eb472d098b3f',
+  '5c0910e9b7c0eb472d098b40'
+];
+
 const userData = [
   {
     _id: userIds[0],
@@ -40,15 +52,16 @@ const userData = [
   }
 ];
 
-
 const foodData = [
   {
+    _id: foodIds[0],
     name: 'Chocolate Almonds',
     kCalsPer100g: 594,
     proteinPer100g: 18,
     carbsPer100g: 28,
     fatPer100g: 48
   }, {
+    _id: foodIds[1],
     name: 'Yoghurt',
     kCalsPer100g: 63,
     proteinPer100g: 5.3,
@@ -63,7 +76,7 @@ const mealData = [
     name: 'Breakfast',
     date: '2018-12-06T00:00:00.009Z',
     serving: {
-      food: 'Yoghurt',
+      food: foodIds[1],
       quantity: 2
     }
   }, {
@@ -71,7 +84,7 @@ const mealData = [
     name: 'Snack',
     date: '2018-12-05T00:00:00.009Z',
     serving: {
-      food: 'Chocolate Almonds',
+      food: foodIds[0],
       quantity: 1
     }
   }
@@ -79,12 +92,15 @@ const mealData = [
 
 const exerciseData = [
   {
+    _id: exerciseIds[0],
     type: 'Cycling',
     intensity: 7.5
   }, {
+    _id: exerciseIds[1],
     type: 'Jogging',
     intensity: 7.0
   }, {
+    _id: exerciseIds[2],
     type: 'Swimming (Freestyle)',
     intensity: 5.8
   }
@@ -94,12 +110,12 @@ const workoutData = [
   {
     user: userIds[0],
     date: '2018-12-05T00:00:00.009Z',
-    exercise: 'Cycling',
+    exercise: exerciseIds[0],
     duration: 60
   }, {
     user: userIds[1],
     date: '2018-12-06T00:00:00.009Z',
-    exercise: 'Jogging',
+    exercise: exerciseIds[1],
     duration: 60
   }
 ];
