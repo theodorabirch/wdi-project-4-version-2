@@ -1,5 +1,10 @@
 const Meal = require('../models/meal');
 
+function mealIndexRoute(req,res, next){
+  Meal.find()
+    .then(meals => res.json(meals))
+    .catch(next);
+}
 
 function mealShowRoute(req, res, next) {
   Meal.findById(req.params.id)
@@ -12,6 +17,7 @@ function mealCreateRoute(req, res, next) {
     .then(meal => res.status(201).json(meal))
     .catch(next);
 }
+
 
 function mealUpdateRoute(req, res, next) {
   Meal.findById(req.params.id)
@@ -31,5 +37,6 @@ module.exports ={
   show: mealShowRoute,
   update: mealUpdateRoute,
   delete: mealDeleteRoute,
-  create: mealCreateRoute
-}; 
+  create: mealCreateRoute,
+  index: mealIndexRoute
+};

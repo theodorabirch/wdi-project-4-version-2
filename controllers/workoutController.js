@@ -1,12 +1,16 @@
 const Workout = require('../models/workout');
 
+function workoutIndexRoute(req,res, next){
+  Workout.find()
+    .then(workout => res.json(workout))
+    .catch(next);
+}
 
 function workoutCreateRoute(req, res, next) {
   Workout.create(req.body)
     .then(workout => res.status(201).json(workout))
     .catch(next);
 }
-
 
 function workoutUpdateRoute(req,res,next) {
   Workout.findById(req.params.id)
@@ -22,11 +26,6 @@ function workoutDeleteRoute(req, res, next) {
     .catch(next);
 }
 
-function workoutIndexRoute(req,res, next){
-  Workout.find()
-    .then(workouts => res.json(workouts))
-    .catch(next);
-}
 
 module.exports ={
   create: workoutCreateRoute,
