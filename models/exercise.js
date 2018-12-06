@@ -6,4 +6,4 @@ const exerciseSchema = mongoose.Schema({
   intensity: { type: Number, min: 1, max: 23 }
 });
 
-module.exports = mongoose.model('exercise', exerciseSchema);
+module.exports = mongoose.model('Exercise', exerciseSchema);
