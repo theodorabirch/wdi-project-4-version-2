@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const authController = require('../controllers/authController');
-// const authController = require('../controllers/authController');
-// const secureController = require('../controllers/secureController');
+const secureController = require('../controllers/secureController');
 const foodController = require('../controllers/foodController');
 const mealController = require('../controllers/mealController');
 const userController = require('../controllers/userController');
@@ -9,17 +8,17 @@ const workoutController = require('../controllers/workoutController');
 
 //user routes
 router.route('/user/:id')
-  .get(userController.show)
-  .put(userController.update);
+  .get(secureController, userController.show)
+  .put(secureController, userController.update);
 
 //workout routes
 router.route('/workouts')
-  .post(workoutController.create)
-  .get(workoutController.index);
+  .post(secureController, workoutController.create)
+  .get(secureController, workoutController.index);
 
 router.route('/workout/:id')
-  .put(workoutController.update)
-  .delete(workoutController.delete);
+  .put(secureController, workoutController.update)
+  .delete(secureController, workoutController.delete);
 
 //food routes
 router.route('/foods')
@@ -32,13 +31,13 @@ router.route('/food/:id')
 
 //meal routes
 router.route('/meals/:id')
-  .get(mealController.show)
-  .put(mealController.update)
-  .delete(mealController.delete);
+  .get(secureController, mealController.show)
+  .put(secureController, mealController.update)
+  .delete(secureController, mealController.delete);
 
 router.route('/meals')
-  .post(mealController.create)
-  .get(mealController.index);
+  .post(secureController, mealController.create)
+  .get(secureController, mealController.index);
 
 // register route
 router.route('/register')
