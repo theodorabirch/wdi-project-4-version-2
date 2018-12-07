@@ -75,18 +75,29 @@ const mealData = [
     user: userIds[1],
     name: 'Breakfast',
     date: '2018-12-06T00:00:00.009Z',
-    serving: {
+    servings: [{
       food: foodIds[1],
       quantity: 2
-    }
+    }, {
+      food: foodIds[0],
+      quantity: 3
+    }]
   }, {
-    user: userIds[0],
+    user: userIds[1],
     name: 'Snack',
     date: '2018-12-05T00:00:00.009Z',
-    serving: {
-      food: foodIds[0],
+    servings: [{
+      food: foodIds[1],
       quantity: 1
-    }
+    }]
+  }, {
+    user: userIds[0],
+    name: 'Breakfast',
+    date: '2018-12-05T00:00:00.009Z',
+    servings: [{
+      food: foodIds[1],
+      quantity: 50
+    }]
   }
 ];
 

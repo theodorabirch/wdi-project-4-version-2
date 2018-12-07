@@ -37,6 +37,9 @@ router.route('/food/:id')
   .delete(secureRoute, foodController.delete);
 
 //meal routes
+router.route('/user/:id/meals/:year/:month/:day')
+  .get(secureRoute, mealController.dayShow);
+
 router.route('/meals/:id')
   .get(secureRoute, mealController.show)
   .put(secureRoute, mealController.update)
