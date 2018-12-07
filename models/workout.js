@@ -9,15 +9,17 @@ const workoutSchema = mongoose.Schema({
 
 workoutSchema.virtual('totalCaloriesBurned')
   .get(function() {
-    const mins = this.mins;
+
+    const mins = this.duration;
     const weight = this.user.weight;
     const intensity = this.exercise.intensity;
 
-    function workoutCalories(mins, weight, intensity){
+    function workoutCalories(mins, weight, intensity) {
       const calsBurned = ((intensity * weight) / 60) * mins;
+      console.log('jane burned:', calsBurned);
       return calsBurned;
     }
-    workoutCalories();
+    return workoutCalories(mins, weight, intensity);
   });
 
 workoutSchema.set('toJSON', {

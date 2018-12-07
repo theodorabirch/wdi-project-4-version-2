@@ -9,7 +9,7 @@ function workoutIndexRoute(req,res, next){
 
 function workoutShowRoute(req, res, next) {
   Workout.findById(req.params.id)
-    .populate('user exercise exercise.intensity exercise.type', Exercise)
+    .populate('user exercise exercise.intensity exercise.type')
     .then(workout => {
       res.json(workout);
     })
@@ -47,7 +47,7 @@ function dayShowRoute(req, res, next) {
       $gte: requestedDay, $lt: nextDay
     }
   })
-    .populate('user user.weight exercise.intensity exercise.type')
+    .populate('user exercise exercise.intensity exercise.type', Exercise)
     .then(workout => res.json(workout))
     .catch(next);
 }
