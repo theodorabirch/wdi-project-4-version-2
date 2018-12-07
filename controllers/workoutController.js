@@ -1,4 +1,5 @@
 const Workout = require('../models/workout');
+const Exercise = require('../models/exercise');
 
 function workoutIndexRoute(req,res, next){
   Workout.find()
@@ -8,7 +9,7 @@ function workoutIndexRoute(req,res, next){
 
 function workoutShowRoute(req, res, next) {
   Workout.findById(req.params.id)
-    .populate('user user.weight exercise.mins exercise.intensity')
+    .populate('user exercise exercise.intensity exercise.type', Exercise)
     .then(workout => {
       res.json(workout);
     })
