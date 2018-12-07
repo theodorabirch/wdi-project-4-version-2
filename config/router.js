@@ -20,7 +20,11 @@ router.route('/workouts')
 
 router.route('/workout/:id')
   .put(secureRoute, workoutController.update)
-  .delete(secureRoute, workoutController.delete);
+  .delete(secureRoute, workoutController.delete)
+  .get(secureRoute, workoutController.show);
+
+router.route('/user/:id/workouts/:year/:month/:day')
+  .get(secureRoute, workoutController.dayShow);
 
 //food routes
 router.route('/foods')

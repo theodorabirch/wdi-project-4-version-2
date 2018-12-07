@@ -1,16 +1,17 @@
 const mongoose = require('mongoose');
 
 const mealSchema = mongoose.Schema({
-  user: {type: mongoose.Schema.ObjectId, ref: 'User'},
-  name: {
-    type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack']
-  },
+  user: {type: mongoose.Schema.ObjectId, ref: 'user'},
   date: Date,
-  servings: [{
-    food: {type: mongoose.Schema.ObjectId, ref: 'Food', required: true},
+  serving: {
+    food: {type: mongoose.Schema.ObjectId, ref: 'food', required: true},
     quantity: Number
+  },
+  name: [{
+    type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack']
   }]
 });
+module.exports = mongoose.model('Meal', mealSchema);
 
 //find total amount of calories, per user, ever.
 
