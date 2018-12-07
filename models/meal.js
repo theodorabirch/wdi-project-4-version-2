@@ -1,17 +1,16 @@
 const mongoose = require('mongoose');
 
 const mealSchema = mongoose.Schema({
-  user: {type: mongoose.Schema.ObjectId, ref: 'user'},
+  user: {type: mongoose.Schema.ObjectId, ref: 'User'},
   date: Date,
-  serving: {
-    food: {type: mongoose.Schema.ObjectId, ref: 'food', required: true},
+  servings: [{
+    food: {type: mongoose.Schema.ObjectId, ref: 'Food', required: true},
     quantity: Number
-  },
-  name: [{
+  }],
+  name: {
     type: String, enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack']
-  }]
+  }
 });
-module.exports = mongoose.model('Meal', mealSchema);
 
 //find total amount of calories, per user, ever.
 
@@ -20,7 +19,7 @@ module.exports = mongoose.model('Meal', mealSchema);
 
 //post to /user/:id/meals/2018/12/6
 
-//back end needs to find the meals that has the User "theo" on the correct date.
+
 mealSchema.virtual('totalCalories')
   .get(function() {
     return this.servings.reduce((total, serving) =>
