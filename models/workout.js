@@ -11,7 +11,7 @@ workoutSchema.virtual('totalCaloriesBurned')
   .get(function() {
     const mins = this.mins;
     const weight = this.user.weight;
-    const intensity = this.user.intensity;
+    const intensity = this.exercise.intensity;
 
     function workoutCalories(mins, weight, intensity){
       const calsBurned = ((intensity * weight) / 60) * mins;
