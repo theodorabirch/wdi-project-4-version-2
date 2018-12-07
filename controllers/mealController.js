@@ -37,10 +37,13 @@ function mealDeleteRoute(req, res, next) {
 }
 
 function dayShowRoute(req, res, next) {
+  //this destructuring defines req.params.year, req.params.month & req.params.day
   const { year, month, day } = req.params;
   const requestedDay = new Date(year, month - 1, day);
+  //getTime returns the time in milliseconds
+  //we add on 1 days worth of milliseconds to get the requested Day + 1
+
   const nextDay = new Date(requestedDay.getTime() + 24 * 60 * 60 * 1000);
-  console.log('Finding meal', year, month, day, requestedDay, nextDay);
   Meal.find({
     user: req.tokenUserId,
     date: {

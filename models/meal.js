@@ -22,29 +22,9 @@ const mealSchema = mongoose.Schema({
 //back end needs to find the meals that has the User "theo" on the correct date.
 mealSchema.virtual('totalCalories')
   .get(function() {
-    console.log('this is', this);
     return this.servings.reduce((total, serving) =>
       total + (serving.food.kCalsPer100g * serving.quantity), 0);
   });
-
-
-
-//for each object in the breakfast array:
-//serving.quantity * serving.food.kCalsPer100g
-
-//using the reduce method, sum all of the numerical values in each array.
-
-
-// virtual for calories consumed per meal
-//stage 1, get total intake for every meal you've ever had. we can filter by date either on the front end or later on the user virtua.
-// is finding the total caloric intake of each mea on 1 today
-
-//stage 2 is summing those numbers and feeing it to te User Dashboard for a total daily intake.
-
-
-//if it all goes to shit, look at doing it on a controller.
-//ie, make a meal, when thats cretaed we then in the user and add that data into their
-// caloriesConsiumed virtual
 
 
 mealSchema.set('toJSON', {
@@ -52,15 +32,3 @@ mealSchema.set('toJSON', {
 });
 
 module.exports = mongoose.model('Meal', mealSchema);
-
-//Virtuals to be added
-//total calories consumed today.
-//find every food object in the breakfast, lunch, dinner sna snack array
-//sum their caloric intake (food.kCalPer100g*quantity)
-
-//Meals
-//Each meal functions as a show page.
-//Servings that comprise a meal (breakfast, lunch etc.) funciton as a comment on the show page.
-//user clicks on breakfast and is directed to Breakfast SHOW.
-//Comments/Servings are posted on the “Breakfast” show by the user.
-//Each comment/serving is an object with 2 key/value pairs: food & quantity
