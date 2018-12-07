@@ -6,6 +6,15 @@ function workoutIndexRoute(req,res, next){
     .catch(next);
 }
 
+function workoutShowRoute(req, res, next) {
+  Workout.findById(req.params.id)
+    .populate('user user.weight exercise.mins exercise.intensity')
+    .then(workout => {
+      res.json(workout);
+    })
+    .catch(next);
+}
+
 function workoutCreateRoute(req, res, next) {
   Workout.create(req.body)
     .then(workout => res.status(201).json(workout))
@@ -26,10 +35,27 @@ function workoutDeleteRoute(req, res, next) {
     .catch(next);
 }
 
+function dayShowRoute(req, res, next) {
+  const { year, month, day } = req.params;
+  const requestedDay = new Date(year, month - 1, day);
+  const nextDay = new Date(requestedDay.getTime() + 24 * 60 * 60 * 1000);
+  console.log('Find the workout', year, month, day, requestedDay, nextDay);
+  Workout.find({
+    user: req.tokenUserId,
+    date: {
+      $gte: requestedDay, $lt: nextDay
+    }
+  })
+    .populate('user user.weight exercise.intensity exercise.type')
+    .then(workout => res.json(workout))
+    .catch(next);
+}
 
 module.exports ={
   create: workoutCreateRoute,
   delete: workoutDeleteRoute,
   update: workoutUpdateRoute,
-  index: workoutIndexRoute
+  index: workoutIndexRoute,
+  dayShow: dayShowRoute,
+  show: workoutShowRoute
 };
