@@ -5,44 +5,58 @@ const foodController = require('../controllers/foodController');
 const mealController = require('../controllers/mealController');
 const userController = require('../controllers/userController');
 const workoutController = require('../controllers/workoutController');
+const servingController = require('../controllers/servingController');
+const secureRoute = secureController.secure;
 
 //user routes
 router.route('/user/:id')
-  .get(secureController.secure, userController.show)
-  .put(secureController.secure, userController.update);
+  .get(secureRoute, userController.show)
+  .put(secureRoute, userController.update);
 
 //workout routes
 router.route('/workouts')
-  .post(secureController.secure, workoutController.create)
-  .get(secureController.secure, workoutController.index);
+  .post(secureRoute, workoutController.create)
+  .get(secureRoute, workoutController.index);
 
 router.route('/workout/:id')
-  .put(secureController.secure, workoutController.update)
-  .delete(secureController.secure, workoutController.delete);
+  .put(secureRoute, workoutController.update)
+  .delete(secureRoute, workoutController.delete);
 
 //food routes
 router.route('/foods')
-  .get(secureController.secure,foodController.index)
-  .post(secureController.secure,foodController.create);
+  .get(secureRoute,foodController.index)
+  .post(secureRoute,foodController.create);
 
 router.route('/food/:id')
-  .put(secureController.secure,foodController.update)
-  .get(secureController.secure, foodController.index)
-  .post(secureController.secure, foodController.create);
+  .put(secureRoute,foodController.update)
+  .get(secureRoute, foodController.index)
+  .post(secureRoute, foodController.create);
 
 router.route('/food/:id')
-  .put(secureController.secure, foodController.update)
-  .delete(secureController.secure, foodController.delete);
+  .put(secureRoute, foodController.update)
+  .delete(secureRoute, foodController.delete);
 
 //meal routes
 router.route('/meals/:id')
-  .get(secureController.secure, mealController.show)
-  .put(secureController.secure, mealController.update)
-  .delete(secureController.secure, mealController.delete);
+  .get(secureRoute, mealController.show)
+  .put(secureRoute, mealController.update)
+  .delete(secureRoute, mealController.delete);
 
 router.route('/meals')
-  .post(secureController.secure, mealController.create)
-  .get(secureController.secure, mealController.index);
+  .post(secureRoute, mealController.create)
+  .get(secureRoute, mealController.index);
+
+//servings create route
+router.route('/meals/:mealId/servings')
+  .post(secureRoute, servingController.create);
+
+//servings delete route
+router.route('/meals/:mealId/servings/:servingId')
+  .delete(secureRoute, servingController.delete);
+
+//servings update route
+router.route('/meals/:mealId/servings/:servingId')
+  .put(secureRoute, servingController.update);
 
 // register route
 router.route('/register')
