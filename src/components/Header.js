@@ -1,42 +1,40 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-function Header(){
-  return(
-    <nav className="nav">
-      <div className="container">
-        <div className="nav-left">
-          <a className="nav-item">
-            Avocardio
-          </a>
-        </div>
-        <label htmlFor="menu-toggle" className="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <input type="checkbox" id="menu-toggle" className="is-hidden"/>
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-        <div className="nav-right nav-menu">
-          <a className="nav-item">
-            Home
-          </a>
-          <a className="nav-item">
-            Dashboard
-          </a>
-          <a className="nav-item">
-            Food Store
-          </a>
-          <a className="nav-item">
-            Exercise Log
-          </a>
-          <a className="nav-item">
-            Tags
-          </a>
+  render() {
+    return(
+      <nav className="nav is-warning">
+        <div className="container">
+          <div className="navbar-start">
+            <h2 className="navbar-item">
+              Avocardio
+            </h2>
+          </div>
+
+          <div className="navbar-end nav-menu">
+            <Link className="navbar-item" to="/">
+              Home
+            </Link>
+            <Link className="navbar-item" to="/user/:id">
+              Dashboard
+            </Link>
+            <Link className="navbar-item" to="/foods">
+              Food Store
+            </Link>
+            <Link className="navbar-item" to="/workouts">
+              Exercise Log
+            </Link>
+          </div>
         </div>
-      </div>
-    </nav>
-  );
+      </nav>
+    );
+  }
 }
 
 export default Header;
