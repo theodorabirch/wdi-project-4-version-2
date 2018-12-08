@@ -10,6 +10,8 @@ import Home from './components/Home';
 import UserShow from './components/users/Show';
 import MealIndex from './components/meals/Index';
 import MealShow from './components/meals/Show';
+import Login from './components/auth/Login';
+import Register from './components/auth/Register';
 
 class App extends React.Component {
 
@@ -21,7 +23,9 @@ class App extends React.Component {
           <main>
             <Switch>
               <Route exact path ='/' component={Home}/>
-              <Route exact path ='/user/:id' component={UserShow}/>
+              <Route path ='/user/:id' component={UserShow}/>
+              <Route path ='/login' component={Login}/>
+              <Route path ='/register' component={Register}/>
               <Route path ='/user/:id/meals' component={MealIndex}/>
               <Route path ='/user/:id/meal/:id' component={MealShow}/>
             </Switch>

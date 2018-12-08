@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { saveToken } from '../../lib/auth';
 import { handleChange } from '../../lib/common';
-import { createFlashMessage } from '../../lib/flash';
+// import { createFlashMessage } from '../../lib/flash';
 
 class AuthLogin extends React.Component {
   constructor(props) {
@@ -19,11 +19,11 @@ class AuthLogin extends React.Component {
       .then(res => {
         saveToken(res.data.token);
       })
-      .then(() => this.props.history.push('/users/:id'))
-      .catch((error) => {
-        createFlashMessage(error.response.data.message, 'danger');
-        this.props.history.replace('/login');
-      });
+      .then(() => this.props.history.push('/users/:id'));
+    // .catch((error) => {
+    //   createFlashMessage(error.response.data.message, 'danger');
+    //   this.props.history.replace('/login');
+    // });
   }
 
   render() {

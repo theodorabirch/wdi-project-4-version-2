@@ -11,14 +11,14 @@ class AuthRegister extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit(event) {
+    event.preventDefault();
 
     axios.post('/api/register', this.state)
       .then(res => {
         saveToken(res.data.token);
       })
-      .then(() => this.props.history.push('/burgers'))
+      .then(() => this.props.history.push(`/user:${this.props.match.params.id}`))
       .catch(() => {
         this.props.history.replace('/login');
       });
