@@ -33,11 +33,6 @@ router.route('/foods')
 
 router.route('/food/:id')
   .put(secureRoute,foodController.update)
-  .get(secureRoute, foodController.index)
-  .post(secureRoute, foodController.create);
-
-router.route('/food/:id')
-  .put(secureRoute, foodController.update)
   .delete(secureRoute, foodController.delete);
 
 //meal routes
