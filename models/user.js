@@ -2,18 +2,18 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const userSchema = mongoose.Schema({
-  username: { type: String, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
+  username: { type: String },
+  email: { type: String },
+  password: { type: String },
   profilePicture: String,
-  forename: { type: String, required: true },
-  surname: { type: String, required: true },
-  age: { type: Number, required: true },
+  forename: { type: String },
+  surname: { type: String },
+  age: { type: Number },
   sex: {
-    type: String, enum: ['Male', 'Female'], required: true
+    type: String, enum: ['Male', 'Female']
   },
-  height: { type: Number, required: true },
-  weight: { type: Number, required: true }
+  height: { type: Number },
+  weight: { type: Number }
 });
 
 userSchema.pre('save', function() {
@@ -28,8 +28,13 @@ userSchema.methods.validatePassword = function(attemptedPassword) {
 
 //Virtuals to be added
 
+userSchema.virtual('BMI')
+  .get(function() {
+    return this.weight / (Math.pow(this.height/100),2 );
+  });
+
 // caloriesBurned virtual
-userSchema.virtual('caloriesBurnedPerDay')
+userSchema.virtual('dailyCaloriesOut')
   .get(function() {
     //for each workout where workout.date === workout.date,
     //run workoutExpenditure fucntion.
@@ -41,7 +46,7 @@ userSchema.virtual('caloriesConsumedPerMeal')
     //run caloricIntakeByMeal function
   });
 
-userSchema.virtual('caloriesConsumedPerDay')
+userSchema.virtual('dailyCaloriesIn')
   .get(function() {
     //for the current user
     //check whether their ID matches the userIds attached to any of the serving in our datanase

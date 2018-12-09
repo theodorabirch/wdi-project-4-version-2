@@ -12,11 +12,11 @@ class Header extends React.Component {
     deleteToken();
     this.props.history.push('/');
   }
-  componentDidUpdate(previousProps) {
-    if (previousProps.location.pathname !== this.props.location.pathname) {
-      this.setState({ url: this.props.location.pathname });
-    }
-  }
+  // componentDidUpdate(previousProps) {
+  //   if (previousProps.location.pathname !== this.props.location.pathname) {
+  //     this.setState({ url: this.props.location.pathname });
+  //   }
+  // }
   componentDidMount() {
     console.log('component was mounted');
   }

@@ -1,4 +1,4 @@
-export function handleChange(e) {
-  const { target: {name, value} } = e;
+export function handleChange(event) {
+  const { target: {name, value} } = event;
   this.setState({ [name]: value });
 }

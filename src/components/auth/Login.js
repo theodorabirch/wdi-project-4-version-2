@@ -12,14 +12,14 @@ class AuthLogin extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
+  handleSubmit(event) {
+    event.preventDefault();
 
     axios.post('/api/login', this.state)
       .then(res => {
         saveToken(res.data.token);
       })
-      .then(() => this.props.history.push('/users/:id'));
+      .then(() => this.props.history.push(`/users/${this.props.match.params.id}`));
     // .catch((error) => {
     //   createFlashMessage(error.response.data.message, 'danger');
     //   this.props.history.replace('/login');
@@ -28,26 +28,28 @@ class AuthLogin extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="field">
-          <input
-            className="input"
-            name="email"
-            placeholder="Email"
-            onChange={this.handleChange}
-          />
-        </div>
-        <div className="field">
-          <input
-            type="password"
-            className="input"
-            name="password"
-            placeholder="Password"
-            onChange={this.handleChange}
-          />
-        </div>
-        <button className="button is-primary">Submit</button>
-      </form>
+      <div><h1>Log In</h1>
+        <form onSubmit={this.handleSubmit}>
+          <div className="field">
+            <input
+              className="input"
+              name="email"
+              placeholder="Email"
+              onChange={this.handleChange}
+            />
+          </div>
+          <div className="field">
+            <input
+              type="password"
+              className="input"
+              name="password"
+              placeholder="Password"
+              onChange={this.handleChange}
+            />
+          </div>
+          <button className="button is-primary">Submit</button>
+        </form>
+      </div>
     );
   }
 }
