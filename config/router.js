@@ -39,7 +39,7 @@ router.route('/food/:id')
 router.route('/user/:id/meals/:year/:month/:day')
   .get(secureRoute, mealController.dayShow);
 
-router.route('/meals/:id')
+router.route('/user/:id/meals/:id')
   .get(secureRoute, mealController.show)
   .put(secureRoute, mealController.update)
   .delete(secureRoute, mealController.delete);
