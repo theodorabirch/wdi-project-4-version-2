@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { handleChange } from '../../lib/common';
 
-class AuthRegister extends React.Component {
+class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -127,4 +127,4 @@ class AuthRegister extends React.Component {
   }
 }
 
-export default AuthRegister;
+export default Register;

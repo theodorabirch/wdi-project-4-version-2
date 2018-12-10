@@ -4,7 +4,7 @@ import { saveToken, decodeToken } from '../../lib/auth';
 import { handleChange } from '../../lib/common';
 
 
-class AuthLogin extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -55,4 +55,4 @@ class AuthLogin extends React.Component {
   }
 }
 
-export default AuthLogin;
+export default Login;

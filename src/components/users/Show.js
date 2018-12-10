@@ -11,6 +11,7 @@ export default class UserShow extends React.Component {
     super(props);
     this.state = {};
   }
+
   componentDidMount(){
     console.log('is this our id (decodetoken)?', decodeToken().sub);
     console.log('is this our id (this.props.match.params.id)?', this.props.match.params.id);
@@ -22,7 +23,6 @@ export default class UserShow extends React.Component {
         this.setState({ user: res.data });
       });
   }
-
 
   render(){
     const user = this.state.user;
