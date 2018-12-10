@@ -46,6 +46,9 @@ class Header extends React.Component {
             {isAuthenticated() && <Link className="navbar-item" to="/workouts">
               Exercise Logs
             </Link>}
+            { isAuthenticated() && <a className="navbar-item" onClick={this.handleLogout}>
+              Logout
+            </a>}
           </div>
         </div>
       </nav>

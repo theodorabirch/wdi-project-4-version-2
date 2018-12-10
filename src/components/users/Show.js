@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { authorizationHeader, saveToken } from '../../lib/auth';
+import { authorizationHeader } from '../../lib/auth';
 
 // import UserThumbnail from './UserThumbNail';
 // import CalsInCalsOut from './CalsInCalsOut';
