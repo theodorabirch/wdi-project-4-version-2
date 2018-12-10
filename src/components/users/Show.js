@@ -11,6 +11,7 @@ export default class UserShow extends React.Component {
     super(props);
     this.state = {};
   }
+
   componentDidMount(){
     axios.get(`/api/user/${this.props.match.params.id}`)
       .then(res => {
@@ -19,7 +20,6 @@ export default class UserShow extends React.Component {
         this.setState({ user: res.data });
       });
   }
-
 
   render(){
     const user = this.state.user;
