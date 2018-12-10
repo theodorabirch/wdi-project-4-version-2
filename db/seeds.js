@@ -30,25 +30,27 @@ const userData = [
     username: 'janedoe',
     email: 'jane@app.com',
     password: 'pass',
-    profilePicture: '',
+    profilePicture: 'https://i.imgur.com/0evCpud.jpg',
     forename: 'Jane',
     surname: 'Doe',
     age: 30,
     sex: 'Female',
     height: 161.6,
-    weight: 70.2
+    weight: 70.2,
+    bodyFat: 23
   }, {
     _id: userIds[1],
     username: 'johndoe',
     email: 'john@app.com',
     password: 'pass',
-    profilePicture: '',
+    profilePicture: 'https://i.imgur.com/0evCpud.jpg',
     forename: 'John',
     surname: 'Doe',
     age: 30,
     sex: 'Male',
     height: 175.3,
-    weight: 83.6
+    weight: 83.6,
+    bodyFat: 14
   }
 ];
 

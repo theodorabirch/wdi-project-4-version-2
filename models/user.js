@@ -13,7 +13,8 @@ const userSchema = mongoose.Schema({
     type: String, enum: ['Male', 'Female']
   },
   height: { type: Number },
-  weight: { type: Number }
+  weight: { type: Number },
+  bodyFat: { type: Number}
 });
 
 userSchema.pre('save', function() {

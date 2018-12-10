@@ -1,16 +1,16 @@
 import React from 'react';
 
-
-
 function UserThumbnail({ user }) {
+  console.log('this is user', user);
+
   return(
     <div>
       <div className="stat-box">
-        <img src="{user.profilePicture }" alt="Sample Image" className="item-image" />
+        <img src={ user.profilePicture } alt="{ user.username }" className="item-image" />
       </div>
 
       <div className="stat-box">
-        <div><span>{ user.forename }</span> <span>{user.surname }</span> <i className="fas fa-{user.sex}"></i></div>
+        <div><span>{ user.forename }</span> <span>{ user.surname }</span> <i className="fas fa-{user.sex}"></i></div>
         <div>{ user.username }</div>
         <div>{ user.age }</div>
       </div>
@@ -32,7 +32,7 @@ function UserThumbnail({ user }) {
 
       <div className="stat-box">
         <h3>BodyFat</h3>
-        <div>user.bodyFat</div>
+        <div>{ user.bodyFat }%</div>
       </div>
     </div>
   );
