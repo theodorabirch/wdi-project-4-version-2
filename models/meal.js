@@ -26,6 +26,11 @@ mealSchema.virtual('totalCalories')
       total + (serving.food.kCalsPer100g * serving.quantity), 0);
   });
 
+// mealSchema.virtual('dailyCaloriesIn')
+//   .get(function() {
+//     return
+//
+//   });
 
 mealSchema.set('toJSON', {
   virtuals: true

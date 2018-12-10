@@ -31,7 +31,7 @@ userSchema.methods.validatePassword = function(attemptedPassword) {
 
 userSchema.virtual('BMI')
   .get(function() {
-    return this.weight / (Math.pow(this.height/100),2 );
+    return this.weight / (Math.pow(this.height/100),2);
   });
 
 // caloriesBurned virtual
@@ -43,7 +43,7 @@ userSchema.virtual('dailyCaloriesOut')
 
 userSchema.virtual('caloriesConsumedPerMeal')
   .get(function() {
-    //for each meal where meal.dat === meal.date:
+    //for each meal where meal.date === meal.date:
     //run caloricIntakeByMeal function
   });
 
