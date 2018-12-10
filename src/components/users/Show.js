@@ -25,7 +25,8 @@ export default class UserShow extends React.Component {
     const user = this.state.user;
     return(
       <div>
-        Welcome to the Dashboard {user}
+        Welcome to the Dashboard {user}.....
+        this.props.match.params.id is {this.props.match.params.id}.....
       </div>
     );
   }

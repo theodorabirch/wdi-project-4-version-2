@@ -4,7 +4,7 @@ const { secret } = require('../config/environment');
 
 
 function secureRoute(req, res, next) {
-  console.log(req.headers);
+  console.log('this is req.headers', req.headers);
   if (!req.headers.authorization)
     res.status(401).json({ message: 'unauthorised'});
   const token = req.headers.authorization.replace('Bearer ', '');

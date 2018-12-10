@@ -13,10 +13,10 @@ class AuthRegister extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     axios.post('/api/register', this.state)
-      .then(() => this.props.history.push('/login'))
-      .catch(() => {
-        this.props.history.replace('/login');
-      });
+      .then(() => this.props.history.push('/login'));
+    // .catch(() => {
+    //   this.props.history.replace('/login');
+    // });
   }
 
   render() {

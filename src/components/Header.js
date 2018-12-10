@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { isAuthenticated, deleteToken, decodeToken } from '../lib/auth';
 
 class Header extends React.Component {
@@ -58,4 +58,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

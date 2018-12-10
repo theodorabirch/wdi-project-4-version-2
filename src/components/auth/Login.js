@@ -14,7 +14,6 @@ class AuthLogin extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     axios.post('/api/login', this.state)
       .then(res => {
         saveToken(res.data.token);
@@ -36,6 +35,7 @@ class AuthLogin extends React.Component {
               name="email"
               placeholder="Email"
               onChange={this.handleChange}
+              value={this.state.email || ''}
             />
           </div>
           <div className="field">
@@ -45,6 +45,7 @@ class AuthLogin extends React.Component {
               name="password"
               placeholder="Password"
               onChange={this.handleChange}
+              value={this.state.password || ''}
             />
           </div>
           <button className="button is-primary">Submit</button>
