@@ -17,6 +17,7 @@ class Header extends React.Component {
   }
 
   render() {
+    console.log('this is decodeToken()', decodeToken());
     return(
       <nav className="nav is-warning">
         <div className="container">
@@ -24,20 +25,20 @@ class Header extends React.Component {
             <h2 className="navbar-item">
               Avocardio
             </h2>
-            { isAuthenticated() && <p> Welcome back {decodeToken().forename}</p>}
+            {isAuthenticated() && <p> Welcome back {decodeToken().username}</p>}
           </div>
 
           <div className="navbar-end nav-menu">
             <Link className="navbar-item" to="/">
               Home
             </Link>
-            <Link className="navbar-item" to="/login">
+            {!isAuthenticated() && <Link className="navbar-item" to="/login">
               Login
-            </Link>
+            </Link>}
             <Link className="navbar-item" to="/register">
               Signup
             </Link>
-            {isAuthenticated() && <Link className="navbar-item" to="/user/:id">
+            {isAuthenticated() && <Link className="navbar-item" to={`/user/${decodeToken().sub}`}>
               Dashboard
             </Link>}
             {isAuthenticated() && <Link className="navbar-item" to="/foods">

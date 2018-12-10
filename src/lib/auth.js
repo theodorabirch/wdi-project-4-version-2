@@ -26,6 +26,8 @@ export function deleteToken() {
 }
 
 export function isAuthenticated() {
+  console.log(getToken());
+  console.log(!!getToken());
   return !!getToken();
 }
 

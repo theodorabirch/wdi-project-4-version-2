@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { saveToken } from '../../lib/auth';
+import { saveToken, decodeToken } from '../../lib/auth';
 import { handleChange } from '../../lib/common';
 
 
@@ -18,7 +18,10 @@ class AuthLogin extends React.Component {
       .then(res => {
         saveToken(res.data.token);
       })
-      .then(() => this.props.history.push(`/users/${this.props.match.params.id}`));
+      .then(() => {
+        console.log('is this the id we are looking for?', decodeToken().sub);
+        this.props.history.push(`/user/${ decodeToken().sub}`);
+      });
 
   }
 
