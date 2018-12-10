@@ -17,7 +17,6 @@ class Header extends React.Component {
   }
 
   render() {
-    console.log('this is decodeToken()', decodeToken());
     return(
       <nav className="nav is-warning">
         <div className="container">

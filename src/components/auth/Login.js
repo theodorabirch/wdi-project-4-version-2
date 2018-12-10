@@ -19,7 +19,6 @@ class Login extends React.Component {
         saveToken(res.data.token);
       })
       .then(() => {
-        console.log('is this the id we are looking for?', decodeToken().sub);
         this.props.history.push(`/user/${ decodeToken().sub}`);
       });
 
