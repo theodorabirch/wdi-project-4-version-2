@@ -4,7 +4,7 @@ const mealSchema = mongoose.Schema({
   user: {type: mongoose.Schema.ObjectId, ref: 'User'},
   date: Date,
   servings: [{
-    food: {type: mongoose.Schema.ObjectId, ref: 'Food', required: true},
+    food: {type: mongoose.Schema.ObjectId, ref: 'Food'},
     quantity: Number
   }],
   name: {

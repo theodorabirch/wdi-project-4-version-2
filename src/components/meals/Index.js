@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { authorizationHeader } from '../../lib/auth';
+import { authorizationHeader, isAuthenticated } from '../../lib/auth';
 // import UserThumbnail from '../users/UserThumbNail';
 // import MealLayout from './Layout';
 
@@ -43,6 +44,10 @@ export default class MealsIndex extends React.Component {
                     {serving.food.name}
                   </div>)
                 }
+                <div>
+                  {isAuthenticated() && <Link to={`/meal/${meal._id}`}><button>Show</button></Link>}
+                  {isAuthenticated() && <Link to={`/meal/${meal._id}/edit`}><button>Edit</button></Link>}
+                </div>
               </div>
             )}
           </div>

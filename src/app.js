@@ -8,7 +8,8 @@ import Home from './components/Home';
 import UserShow from './components/users/Show';
 import UserEdit from './components/users/Edit';
 import MealIndex from './components/meals/Index';
-// import MealShow from './components/meals/Show';
+import MealShow from './components/meals/Show';
+import MealEdit from './components/meals/Edit';
 import WorkoutsIndex from './components/workouts/Index';
 import WorkoutShow from './components/workouts/Show';
 import FoodStore from './components/foods/Index';
@@ -31,7 +32,8 @@ class App extends React.Component {
             <Route path='/login' component={Login}/>
             <Route exact path='/register' component={Register}/>
             <Route path='/meals' component={MealIndex}/>
-            {/* <Route path='/user/:id/meal/:id' component={MealShow}/> */}
+            <Route path='/meal/:id' component={MealShow}/>
+            <Route path='/meal/:id/edit' component={MealEdit}/>
             <Route path='/user/:id/workout' component={WorkoutsIndex}/>
             <Route path='/user/:id/workout/:id' component={WorkoutShow}/>
             <Route path='/foods' component={FoodStore}/>
