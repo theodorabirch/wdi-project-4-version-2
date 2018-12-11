@@ -1,4 +1,6 @@
 import React from 'react';
+import { isAuthenticated } from '../../lib/auth';
+import { Link } from 'react-router-dom';
 
 function UserThumbnail({ user }) {
   console.log('this is user', user);
@@ -33,6 +35,9 @@ function UserThumbnail({ user }) {
       <div className="stat-box">
         <h3>BodyFat</h3>
         <div>{ user.bodyFat }%</div>
+      </div>
+      <div>
+        {isAuthenticated() && <Link to={`/user/${user._id}/edit`}><button>Edit the user</button></Link>}
       </div>
     </div>
   );

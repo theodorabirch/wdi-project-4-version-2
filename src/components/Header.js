@@ -34,9 +34,10 @@ class Header extends React.Component {
             {!isAuthenticated() && <Link className="navbar-item" to="/login">
               Login
             </Link>}
-            <Link className="navbar-item" to="/register">
+
+            {!isAuthenticated() &&<Link className="navbar-item" to="/register">
               Signup
-            </Link>
+            </Link>}
             {isAuthenticated() && <Link className="navbar-item" to={`/user/${decodeToken().sub}`}>
               Dashboard
             </Link>}

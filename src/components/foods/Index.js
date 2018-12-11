@@ -12,7 +12,7 @@ export default class ExerciseIndex extends React.Component {
 
   componentDidMount() {
     console.log('mounting');
-    axios.get(`/api/user/${this.props.match.params.id}`, authorizationHeader())
+    axios.get('https://trackapi.nutritionix.com/v2/natural/nutrients/', authorizationHeader())
       .then(res => {
         (res.data.token);
         this.setState({ user: res.data });
@@ -30,7 +30,7 @@ export default class ExerciseIndex extends React.Component {
               <div className="container">
                 <div className="columns">
                   <div className="item">
-                    <h4 className="item-title">This is the UserThumbnnail</h4>
+                    <h4 className="item-title">FoodStore</h4>
                     <UserThumbnail user={user} />
                   </div>
                 </div>

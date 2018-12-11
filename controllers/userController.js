@@ -16,7 +16,9 @@ function userUpdateRoute(req,res,next) {
     .catch(next);
 }
 
+
 module.exports = {
   show: userShowRoute,
   update: userUpdateRoute
+
 };
