@@ -41,7 +41,7 @@ export default class MealsIndex extends React.Component {
 
                 { meal.servings.map(serving =>
                   <div className="servings" key={serving._id}>
-                    {serving.food.name}
+                    <p>{serving.food.name}</p>
                   </div>)
                 }
                 <div>

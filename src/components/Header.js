@@ -20,12 +20,6 @@ class Header extends React.Component {
     return(
       <nav className="nav is-warning">
         <div className="container">
-          <div className="navbar-start">
-            <h2 className="navbar-item">
-              Avocardio
-            </h2>
-            {isAuthenticated() && <p> Welcome back {decodeToken().username}</p>}
-          </div>
 
           <div className="navbar-end nav-menu">
             <Link className="navbar-item" to="/">

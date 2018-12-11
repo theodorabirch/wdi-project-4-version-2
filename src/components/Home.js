@@ -1,27 +1,25 @@
 import React from 'react';
-
+import { isAuthenticated, decodeToken } from '../lib/auth';
 
 function Home() {
   return (
     <div className="container">
-      <header>
-        <h2>Avocardio</h2>
-      </header>
-
-      <div className="cover">
-        <h1>HOME PAGE CONTENT TO GO HERE</h1>
-        <form  className="flex-form">
-          <label htmlFor ="from">
-            <i className="ion-location"></i>
-          </label>
-          <input type="search" placeholder="Get fit"/>
-          <input type="submit" value="Search"/>
-        </form>
-        <div>
-          
+      <section className="hero is-info is-fullheight">
+        <div className="hero-body homepage">
+          <div className="container has-text-centered">
+            <div className="container avocado ">
+              <div className="container-name text column is-6 is-offset-3">
+                <h1 className="title on-home">
+                  AvoCardio
+                </h1>
+                <h2 className="subtitle">
+                  {isAuthenticated() && <p> Welcome back {decodeToken().username}</p>}
+                </h2>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
+      </section>
     </div>
 
   );
