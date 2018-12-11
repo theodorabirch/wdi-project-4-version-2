@@ -65,7 +65,7 @@ export default class UserShow extends React.Component {
                     <div className="item">
                       <h4 className="item-title">Calories In</h4>
                       <CalsInCalsOut user={user} />
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>
@@ -76,7 +76,7 @@ export default class UserShow extends React.Component {
 
                     <div className="item">
                       <h4 className="item-title">Calories Out</h4>
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>
@@ -87,7 +87,7 @@ export default class UserShow extends React.Component {
 
                     <div className="item">
                       <h4 className="item-title">Calories In/Out Chart</h4>
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>
@@ -98,7 +98,7 @@ export default class UserShow extends React.Component {
 
                     <div className="item">
                       <h4 className="item-title">Calories In/Out Chart</h4>
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>
@@ -109,7 +109,7 @@ export default class UserShow extends React.Component {
 
                     <div className="item">
                       <h4 className="item-title">Last Meal</h4>
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>
@@ -120,7 +120,7 @@ export default class UserShow extends React.Component {
 
                     <div className="item">
                       <h4 className="item-title">Last Exercise</h4>
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>
@@ -131,7 +131,7 @@ export default class UserShow extends React.Component {
 
                     <div className="item">
                       <h4 className="item-title">Sleep</h4>
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>
@@ -142,7 +142,7 @@ export default class UserShow extends React.Component {
 
                     <div className="item">
                       <h4 className="item-title">Water</h4>
-                      <p>Lorem Ipsum</p>
+                      <p></p>
                       <div className="social">
                         <a href="#"><i className="fa fa-facebook"></i></a>
                         <a href="#"><i className="fa fa-twitter"></i></a>

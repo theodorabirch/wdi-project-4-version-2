@@ -23,7 +23,7 @@ export default class MealEdit extends React.Component {
     event.preventDefault();
     axios.put(`/api/meal/${this.state._id}`, this.state, authorizationHeader())
       .then(result =>
-        this.props.history.push(`/meals/${result.data._id}`)
+        this.props.history.push(`/meal/${result.data._id}`)
       );
   }
 

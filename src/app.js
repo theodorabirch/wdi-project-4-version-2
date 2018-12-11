@@ -32,8 +32,8 @@ class App extends React.Component {
             <Route path='/login' component={Login}/>
             <Route exact path='/register' component={Register}/>
             <Route path='/meals' component={MealIndex}/>
-            <Route path='/meal/:id' component={MealShow}/>
             <Route path='/meal/:id/edit' component={MealEdit}/>
+            <Route path='/meal/:id' component={MealShow}/>
             <Route path='/user/:id/workout' component={WorkoutsIndex}/>
             <Route path='/user/:id/workout/:id' component={WorkoutShow}/>
             <Route path='/foods' component={FoodStore}/>
