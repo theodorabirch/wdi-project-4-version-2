@@ -1,8 +1,8 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
-import UserThumbnail from '../user/UserThumbNail';
+// import UserThumbnail from '../users/UserThumbNail';
 
-function MealLayout({ meal, user }) {
+function MealLayout({ meal }) {
   return (
     <div>
       <article className="post">
@@ -10,7 +10,7 @@ function MealLayout({ meal, user }) {
           <div className="columns">
             <div className="item">
               <h4 className="item-title">This is the UserThumbnnail</h4>
-              <UserThumbnail user={user} />
+              {/* <UserThumbnail user={user} /> */}
             </div>
           </div>
         </div>

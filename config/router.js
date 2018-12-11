@@ -45,7 +45,7 @@ router.route('user/:id/meals/:id')
   .put(secureRoute, mealController.update)
   .delete(secureRoute, mealController.delete);
 
-router.route('/user/:id/meals')
+router.route('/meals')
   .post(secureRoute, mealController.create)
   .get(secureRoute, mealController.index);
 

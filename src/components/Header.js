@@ -13,7 +13,7 @@ class Header extends React.Component {
     this.props.history.push('/');
   }
   componentDidMount() {
-    console.log('component was mounted');
+    console.log('header component was mounted');
   }
 
   render() {
@@ -46,6 +46,9 @@ class Header extends React.Component {
             </Link>}
             {isAuthenticated() && <Link className="navbar-item" to={`/user/${decodeToken().sub}/workouts`}>
               Exercise Logs
+            </Link>}
+            {isAuthenticated() && <Link className="navbar-item" to={'/meals'}>
+                Meals Index
             </Link>}
             { isAuthenticated() && <a className="navbar-item" onClick={this.handleLogout}>
               Logout
