@@ -40,6 +40,18 @@ export default class MealShow extends React.Component {
             <p>{meal.date}</p>
             <p>{meal.totalCalories}</p>
             <div>
+              {meal.servings && meal.servings.map(
+                serving =>
+                  <div key={serving._id} className="servings-item">
+                    <p>{serving.food.name}</p>
+
+
+                  </div>
+              )
+
+              }
+            </div>
+            <div>
               {isAuthenticated() && <Link to={`/meal/${meal._id}/edit`}><button>Edit</button></Link>}
             </div>
           </div>

@@ -1,132 +1,58 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { authorizationHeader } from '../../lib/auth';
-import UserThumbnail from '../users/UserThumbNail';
+import { authorizationHeader, isAuthenticated } from '../../lib/auth';
+// import UserThumbnail from '../users/UserThumbNail';
+// import MealLayout from './Layout';
 
 
-export default class WorkoutsIndex extends React.Component {
+export default class WorkoutIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   componentDidMount() {
-    console.log('mounting');
-    axios.get(`/api/user/${this.props.match.params.id}`, authorizationHeader())
+    console.log('mounting WorkoutIndex');
+
+    axios.get('/api/meals', authorizationHeader())
       .then(res => {
-        (res.data.token);
-        this.setState({ user: res.data });
+        this.setState({ workouts: res.data }, () => {
+          console.log('res.data is', res.data);
+          console.log('this.state.workouts', this.state.workouts );
+        });
       });
   }
 
   render() {
-    const user = this.state.user;
-    console.log('this is user', user);
-    console.log('this is this.state.user', this.state.user);
+    const workoutArray = this.state.workouts;
+
     return(
       <div>
-        {user
+        {workoutArray
           ?
-          <div>
-            <article className="post">
-              <div className="container">
-                <div className="columns">
-                  <div className="item">
-                    <h4 className="item-title">This is the UserThumbnnail</h4>
-                    <UserThumbnail user={user} />
-                  </div>
+          <div className="columns is-multiline">
+            {workoutArray.map(meal =>
+              <div key={meal._id}>
+
+                <p>{workout.name}</p>
+                <p>{workout.date}</p>
+
+                { workout.exercise.map(serving =>
+                  <div className="servings" key={serving._id}>
+                    {workout.food.name}
+                  </div>)
+                }
+                <div>
+                  {isAuthenticated() && <Link to={`/meal/${meal._id}`}><button>Show</button></Link>}
+                  {isAuthenticated() && <Link to={`/meal/${meal._id}/edit`}><button>Edit</button></Link>}
                 </div>
               </div>
-            </article>
-            <article className="post">
-              <div className="container">
-                <h3>Your Workouts</h3>
-                <div className="columns quarters">
-                  <div className="item"> <h4 className="item-title">Workout</h4>
-                    <h1>Cycling</h1>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <h4 className="item-title">Workout</h4>
-                    <h1><i className="fas fa-bicycle"></i></h1>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <h4 className="item-title">Duration</h4>
-                    <h1>60 mins</h1>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <h4 className="item-title">Calories Burned</h4>
-                    <p>totalCaloriesBurned(): 520</p>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <h4 className="item-title">???</h4>
-                    <p>Lorem Ipsum</p>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <h4 className="item-title">???</h4>
-                    <p>Lorem Ipsum</p>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <h4 className="item-title">???</h4>
-                    <p>Lorem Ipsum</p>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                  <div className="item">
-                    <h4 className="item-title">???</h4>
-                    <p>Lorem Ipsum</p>
-                    <div className="social">
-                      <a href="#"><i className="fa fa-facebook"></i></a>
-                      <a href="#"><i className="fa fa-twitter"></i></a>
-                      <a href="#"><i className="fa fa-google"></i></a>
-                      <a href="#"><i className="fa fa-envelope"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
+            )}
           </div>
+
           :
-          <p> Please wait..</p>}
+          <p> Await your meal..</p>}
       </div>
     );
   }
