@@ -159,6 +159,13 @@ body {
   }
 }
 
+.eighths {
+  .item {
+     max-width: 12%;
+     height: auto;
+  }
+}
+
 //Setting up full-bleed images, shrinking the height on smaller viewports
 .full-bleed {
   background-size: cover;

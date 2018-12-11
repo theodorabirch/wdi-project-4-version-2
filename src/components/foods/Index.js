@@ -40,7 +40,7 @@ export default class ExerciseIndex extends React.Component {
               <div className="container">
                 <h3>The Food Store</h3>
                 <div className="columns quarters">
-                  <div className="item"> <h4 className="item-title">Exercise</h4>
+                  <div className="item"> <h4 className="item-title">Food</h4>
                     <h1>Food</h1>
                     <div className="social">
                       <a href="#"><i className="fa fa-facebook"></i></a>
@@ -50,7 +50,7 @@ export default class ExerciseIndex extends React.Component {
                     </div>
                   </div>
                   <div className="item">
-                    <h4 className="item-title">MET</h4>
+                    <h4 className="item-title">Food</h4>
                     <h1><i className="fas fa-bicycle"></i></h1>
                     <div className="social">
                       <a href="#"><i className="fa fa-facebook"></i></a>
