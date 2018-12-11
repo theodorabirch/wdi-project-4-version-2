@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import UserShow from './components/users/Show';
+import UserEdit from './components/users/Edit';
 // import MealIndex from './components/meals/Index';
 // import MealShow from './components/meals/Show';
 import WorkoutsIndex from './components/workouts/Index';
@@ -25,6 +26,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path='/' component={Home}/>
+            <Route path='/user/:id/edit' component={UserEdit}/>
             <Route path='/user/:id' component={UserShow}/>
             <Route path='/login' component={Login}/>
             <Route exact path='/register' component={Register}/>

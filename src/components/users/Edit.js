@@ -13,7 +13,7 @@ export default class UserEdit extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`/api/user/${this.props.match.params.id}`)
+      .get(`/api/user/${this.props.match.params.id}`, authorizationHeader())
       .then(result => this.setState(result.data), () => {
         console.log(this.state);
       });
@@ -26,9 +26,11 @@ export default class UserEdit extends React.Component {
         this.props.history.push(`/user/${result.data._id}`)
       );
   }
+
   handleChange({ target: {name, value }}) {
     this.setState({ [name]: value });
   }
+
   render() {
     return(
       <section>
