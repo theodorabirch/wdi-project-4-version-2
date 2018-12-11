@@ -23,7 +23,7 @@ workoutSchema.virtual('totalCaloriesBurned')
   });
 
 workoutSchema.pre('find', function() {
-  this.populate('workouts.exercise');
+  this.populate('exercise');
 });
 
 workoutSchema.set('toJSON', {
