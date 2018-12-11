@@ -14,11 +14,11 @@ router.route('/user/:id')
   .put(secureRoute, userController.update);
 
 //workout routes
-router.route('/workouts')
+router.route('/user/:id/workouts')
   .post(secureRoute, workoutController.create)
   .get(secureRoute, workoutController.index);
 
-router.route('/workout/:id')
+router.route('/user/:id/workout/:id')
   .put(secureRoute, workoutController.update)
   .delete(secureRoute, workoutController.delete)
   .get(secureRoute, workoutController.show);
@@ -39,12 +39,12 @@ router.route('/food/:id')
 router.route('/user/:id/meals/:year/:month/:day')
   .get(secureRoute, mealController.dayShow);
 
-router.route('/meals/:id')
+router.route('user/:id/meals/:id')
   .get(secureRoute, mealController.show)
   .put(secureRoute, mealController.update)
   .delete(secureRoute, mealController.delete);
 
-router.route('/meals')
+router.route('/user/:id/meals')
   .post(secureRoute, mealController.create)
   .get(secureRoute, mealController.index);
 
