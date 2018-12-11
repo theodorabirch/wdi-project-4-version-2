@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { authorizationHeader } from '../../lib/auth';
+import { authorizationHeader, isAuthenticated } from '../../lib/auth';
 
 
 import UserThumbnail from './UserThumbNail';
@@ -11,16 +11,9 @@ export default class UserShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleDelete = this.handleDelete.bind(this);
   }
-  // getCalories() {
-  //   const calories = this.state.user.meals;
-  //   console.log('this is the calories', calories);
-  //   axios.get(`/api/user/${this.props.match.params.id}`)
-  //     .then(res => {
-  //       (res.data.meals);
-  //       this.setState({ meal: res.data }, console.log('these are the meals of the user', res.data));
-  //     });
-  // }
+
 
   componentDidMount(){
     console.log('mounting');
@@ -29,6 +22,12 @@ export default class UserShow extends React.Component {
         (res.data.token);
         this.setState({ user: res.data }, console.log('here'));
       });
+  }
+
+  handleDelete(event) {
+    event.preventDefault();
+    axios.delete(`api/user/${this.state.user._id}`, authorizationHeader())
+      .then(() => this.props.history.push('/'));
   }
 
   render() {
@@ -49,6 +48,7 @@ export default class UserShow extends React.Component {
                     <div className="item">
                       <h4 className="item-title">This is the UserThumbnail</h4>
                       <UserThumbnail user={user} />
+                      {isAuthenticated() && <button onClick={this.handleDelete}>Delete</button>}
                     </div>
                   </div>
                 </div>
@@ -160,3 +160,13 @@ export default class UserShow extends React.Component {
     );
   }
 }
+
+// getCalories() {
+//   const calories = this.state.user.meals;
+//   console.log('this is the calories', calories);
+//   axios.get(`/api/user/${this.props.match.params.id}`)
+//     .then(res => {
+//       (res.data.meals);
+//       this.setState({ meal: res.data }, console.log('these are the meals of the user', res.data));
+//     });
+// }

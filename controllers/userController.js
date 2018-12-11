@@ -16,9 +16,15 @@ function userUpdateRoute(req,res,next) {
     .catch(next);
 }
 
+function userDeleteRoute(req,res,next) {
+  User.findByIdAndDelete(req.params.id)
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
 
 module.exports = {
   show: userShowRoute,
-  update: userUpdateRoute
-
+  update: userUpdateRoute,
+  delete: userDeleteRoute
 };

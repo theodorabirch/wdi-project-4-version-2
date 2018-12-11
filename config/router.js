@@ -11,7 +11,8 @@ const secureRoute = secureController.secure;
 //user routes
 router.route('/user/:id')
   .get(secureRoute, userController.show)
-  .put(secureRoute, userController.update);
+  .put(secureRoute, userController.update)
+  .delete(secureRoute, userController.delete);
 
 //workout routes
 router.route('/user/:id/workouts')
