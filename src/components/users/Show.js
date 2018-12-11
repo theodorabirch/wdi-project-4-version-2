@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { authorizationHeader, isAuthenticated } from '../../lib/auth';
+import { authorizationHeader, isAuthenticated, deleteToken } from '../../lib/auth';
 
 
 import UserThumbnail from './UserThumbNail';
@@ -26,8 +26,11 @@ export default class UserShow extends React.Component {
 
   handleDelete(event) {
     event.preventDefault();
-    axios.delete(`api/user/${this.state.user._id}`, authorizationHeader())
-      .then(() => this.props.history.push('/'));
+    axios.delete(`/api/user/${this.state.user._id}`, authorizationHeader())
+      .then(() => {
+        deleteToken();
+        this.props.history.push('/');
+      });
   }
 
   render() {
