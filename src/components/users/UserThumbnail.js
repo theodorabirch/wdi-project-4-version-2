@@ -8,7 +8,7 @@ function UserThumbnail({ user }) {
   return(
     <div>
       <div className="stat-box">
-        <img src={ user.profilePicture } alt="{ user.username }" className="item-image" />
+        <img src={ user.profilePicture } alt={ user.username } className="item-image" />
       </div>
 
       <div className="stat-box">
