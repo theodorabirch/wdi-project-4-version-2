@@ -41,6 +41,13 @@ userSchema.virtual('dailyCaloriesOut')
     //run workoutExpenditure fucntion.
   });
 
+userSchema.virtual('meals', {
+  localField: '_id',
+  foreignField: 'user',
+  ref: 'Meal'
+});
+  
+
 userSchema.virtual('caloriesConsumedPerMeal')
   .get(function() {
     //for each meal where meal.date === meal.date:

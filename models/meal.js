@@ -12,6 +12,10 @@ const mealSchema = mongoose.Schema({
   }
 });
 
+mealSchema.pre('find', function() {
+  this.populate('servings.food');
+});
+
 //find total amount of calories, per user, ever.
 
 //we can route to a specific users meals (ie, user/:id/meals)
