@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { authorizationHeader, isAuthenticated } from '../../lib/auth';
-// import UserThumbnail from '../users/UserThumbNail';
-// import MealLayout from './Layout';
+
 
 
 export default class WorkoutIndex extends React.Component {
@@ -15,7 +14,7 @@ export default class WorkoutIndex extends React.Component {
   componentDidMount() {
     console.log('mounting WorkoutIndex');
 
-    axios.get('/api/meals', authorizationHeader())
+    axios.get('/api/workouts', authorizationHeader())
       .then(res => {
         this.setState({ workouts: res.data }, () => {
           console.log('res.data is', res.data);
@@ -26,27 +25,25 @@ export default class WorkoutIndex extends React.Component {
 
   render() {
     const workoutArray = this.state.workouts;
+    console.log('this is workOutarray', workoutArray);
 
     return(
       <div>
         {workoutArray
           ?
           <div className="columns is-multiline">
-            {workoutArray.map(meal =>
-              <div key={meal._id}>
+            {workoutArray.map(workout =>
+              <div key={workout._id}>
 
-                <p>{workout.name}</p>
+                <p>{workout.duration}</p>
                 <p>{workout.date}</p>
-
-                { workout.exercise.map(serving =>
-                  <div className="servings" key={serving._id}>
-                    {workout.food.name}
-                  </div>)
-                }
-                <div>
-                  {isAuthenticated() && <Link to={`/meal/${meal._id}`}><button>Show</button></Link>}
-                  {isAuthenticated() && <Link to={`/meal/${meal._id}/edit`}><button>Edit</button></Link>}
-                </div>
+                <p>{workout.exercise.type}</p>
+                <p>{workout.exercise.intensity}</p>
+                {
+                  <div>
+                    {isAuthenticated() && <Link to={`/workout/${workout._id}`}><button>Show</button></Link>}
+                    {isAuthenticated() && <Link to={`/workout/${workout._id}/edit`}><button>Edit</button></Link>}
+                  </div> }
               </div>
             )}
           </div>

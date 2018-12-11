@@ -15,7 +15,7 @@ router.route('/user/:id')
   .delete(secureRoute, userController.delete);
 
 //workout routes
-router.route('/user/:id/workouts')
+router.route('/workouts')
   .post(secureRoute, workoutController.create)
   .get(secureRoute, workoutController.index);
 
