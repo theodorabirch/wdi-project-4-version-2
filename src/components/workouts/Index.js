@@ -41,7 +41,6 @@ export default class WorkoutIndex extends React.Component {
                 <p>{workout.exercise.intensity}</p>
                 {
                   <div>
-                    {isAuthenticated() && <Link to={`/workout/${workout._id}`}><button>Show</button></Link>}
                     {isAuthenticated() && <Link to={`/workout/${workout._id}/edit`}><button>Edit</button></Link>}
                   </div> }
               </div>

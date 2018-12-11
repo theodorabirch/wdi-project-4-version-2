@@ -46,7 +46,12 @@ userSchema.virtual('meals', {
   foreignField: 'user',
   ref: 'Meal'
 });
-  
+
+userSchema.virtual('workouts', {
+  localField: '_id',
+  foreignField: 'user',
+  ref: 'Workout'
+});
 
 userSchema.virtual('caloriesConsumedPerMeal')
   .get(function() {

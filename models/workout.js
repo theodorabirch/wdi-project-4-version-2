@@ -22,6 +22,10 @@ workoutSchema.virtual('totalCaloriesBurned')
     return workoutCalories(mins, weight, intensity);
   });
 
+workoutSchema.pre('find', function() {
+  this.populate('workouts.exercise');
+});
+
 workoutSchema.set('toJSON', {
   virtuals: true
 });

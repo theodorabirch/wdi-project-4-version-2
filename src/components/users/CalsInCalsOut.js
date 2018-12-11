@@ -14,6 +14,9 @@ export default function CalsInCalsOut({ user }) {
           )}
         </div>
       </div>
+      <div className="cals-out-box">
+        {}
+      </div>
     </div>
   );
 }

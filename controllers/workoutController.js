@@ -3,7 +3,7 @@ const Exercise = require('../models/exercise');
 
 function workoutIndexRoute(req,res, next){
   Workout.find()
-    .populate('exercise')
+    .populate('exercise user workouts ')
     .then(workout => res.json(workout))
     .catch(next);
 }

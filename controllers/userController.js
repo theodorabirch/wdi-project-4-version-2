@@ -2,7 +2,7 @@ const User = require('../models/user');
 
 function userShowRoute(req, res, next) {
   User.findById(req.params.id)
-    .populate('meals')
+    .populate('meals workouts totalCaloriesBurned')
     .then(user => User.populate(user, 'meals.servings.food'))
     .then(user => res.json(user))
     .catch(next);
