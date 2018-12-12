@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function CalsInCalsOut({ user }) {
-  console.log('this is user.meals', user.meals.totalCalories);
+
   return(
     <div>
       <div className="cal-box">
@@ -18,7 +18,7 @@ export default function CalsInCalsOut({ user }) {
         <div className="item-cals">
           {user.workouts.map(workout =>
             <div key={workout._id}>
-              <p>{workout.totalCaloriesBurned}</p>
+              <p>{workout}</p>
             </div>
           )}
         </div>
