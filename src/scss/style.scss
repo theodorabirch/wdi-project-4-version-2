@@ -30,7 +30,7 @@ $fa-font-path: "~font-awesome/fonts";
 
 
 .homepage {
-  background-image: url('https://imgur.com/vIGSyLv.png');
+  background-image: url('https://imgur.com/YdcWWrk.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
@@ -89,8 +89,11 @@ $fa-font-path: "~font-awesome/fonts";
 
 
 h1.title.on-home {
-  margin-top: -150px;
+  margin-top: -250px;
   margin-left: -30px;
+  color: white;
+  font-size: 100px;
+  margin-bottom: 20px;
 }
 .hero.is-info .title {
   color: black;
