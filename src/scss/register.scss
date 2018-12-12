@@ -51,92 +51,18 @@ body {
 
 #signup .inputs {
     margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 400px;
 }
 
-#signup .inputs label {
-    color: #8f8f8f;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-bottom: 7px;
-    display: block;
+.mulipleInput {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-input::-webkit-input-placeholder {
-    color:    #b5b5b5;
-}
-
-input:-moz-placeholder {
-    color:    #b5b5b5;
-}
-
-#signup .inputs input[type=email], input[type=password] {
-    background: #f5f5f5;
-    font-size: 0.8rem;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    padding: 13px 10px;
-    width: 330px;
-    margin-bottom: 20px;
-    box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
-    clear: both;
-}
-
-#signup .inputs input[type=name] {
-    background: #f5f5f5;
-    font-size: 0.8rem;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    padding: 13px 10px;
-    width: 153px;
-    margin-bottom: 20px;
-    box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
-    clear: both;
-}
-
-#signup .inputs input[type=number] {
-    background: #f5f5f5;
-    font-size: 0.8rem;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    border: none;
-    padding: 13px 10px;
-    width: 94px;
-    margin-bottom: 20px;
-    box-shadow: inset 0px 2px 3px rgba( 0,0,0,0.1 );
-    clear: both;
-}
-
-#signup .inputs input[type=email]:focus, input[type=password]:focus {
-    background: #fff;
-    box-shadow: 0px 0px 0px 3px #fff38e, inset 0px 2px 3px rgba( 0,0,0,0.2 ), 0px 5px 5px rgba( 0,0,0,0.15 );
-    outline: none;
-}
-
-#signup .inputs .checkboxy {
-    display: block;
-    position: static;
-    height: 25px;
-    margin-top: 10px;
-    clear: both;
-}
-
-#signup .inputs input[type=checkbox] {
-    float: left;
-    margin-right: 10px;
-    margin-top: 3px;
-}
-
-#signup .inputs label.terms {
-    float: left;
-    font-size: 14px;
-    font-style: italic;
-}
-#submit {
-    background-color: #57ae9f;
+#signup .input {
+  background-color: white;
 }
