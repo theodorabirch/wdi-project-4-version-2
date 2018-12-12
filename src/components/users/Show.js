@@ -4,6 +4,8 @@ import { authorizationHeader, isAuthenticated, deleteToken } from '../../lib/aut
 
 
 import UserThumbnail from './UserThumbNail';
+import TodaysMeals from './TodaysMeals';
+import TodaysWorkouts from './TodaysWorkouts';
 import CalsInCalsOut from './CalsInCalsOut';
 // import DailyProgress from './DailyProgress';
 
@@ -42,72 +44,188 @@ export default class UserShow extends React.Component {
         <div>
           {user
             ?
-            <div>
-              <article className="post">
-                <div className="container">
 
-                  <div className="columns">
 
-                    <div className="item">
-                      <h4 className="item-title">This is the UserThumbnail</h4>
-                      <UserThumbnail user={user} />
-                      {isAuthenticated() && <button onClick={this.handleDelete}>Delete</button>}
+            <div className="container">
+              <div className="columns">
+
+
+                <div className="column is-12 is-multiline">
+
+                  <section className="hero is-info welcome is-small">
+                    <div className="avocado-body">
+                      <div className="container">
+                        <h1 className="title">
+                          <UserThumbnail user={user} />
+                          {isAuthenticated() && <button onClick={this.handleDelete}>Delete Account</button>}
+                        </h1>
+                      </div>
                     </div>
-                  </div>
+                  </section>
+
+
+                  <section>
+                    <div className='box has-text-centered'>
+                      <div className='has-text-centered'>
+                        <p className='has-text-centered'>
+                          <button> <i className="fas fa-chevron-left"> </i></button>
+                          <strong>Date Goes Here</strong>
+                          <button> <i className="fas fa-chevron-right"> </i></button>
+                        </p>
+                      </div>
+
+                    </div>
+                  </section>
+
+                  <section className="info-tiles">
+                    <div className="tile is-ancestor has-text-centered">
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="title">439k</p>
+                          <p className="subtitle">Calories In</p>
+                        </article>
+                      </div>
+
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="title">59k</p>
+                          <p className="subtitle">Calories Out</p>
+                        </article>
+                      </div>
+
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="title">Chart -- </p>
+                          <p className="subtitle">Chart.js</p>
+                        </article>
+                      </div>
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="title"></p>
+                          <p className="subtitle">Chart.js</p>
+                        </article>
+                      </div>
+
+
+                    </div>
+                  </section>
+
+
+                  <section className="info-tiles">
+                    <div className="tile is-ancestor has-text-centered">
+
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="title">2</p>
+                          <p className="subtitle">Meals</p>
+                          <TodaysMeals user={user} />
+                        </article>
+                      </div>
+
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="subtitle">Workouts</p>
+                          <TodaysWorkouts user={user} />
+                        </article>
+                      </div>
+
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="title">7h 45</p>
+                          <p className="subtitle">Sleep</p>
+                        </article>
+                      </div>
+                      <div className="tile is-parent">
+                        <article className="tile is-child box">
+                          <p className="title">2250ml</p>
+                          <p className="subtitle">Water</p>
+                        </article>
+                      </div>
+
+
+                    </div>
+                  </section>
+
+
+
+
                 </div>
-              </article>
-
-              <article className="post">
-                <div className="container">
-                  <h3>Your Daily Statistics</h3>
-                  <div className="columns quarters">
-
-                    <div className="item">
-                      <h4 className="item-title">Calories In</h4>
-                      <CalsInCalsOut user={user} />
-                      <p></p>
-                    </div>
-
-                    <div className="item">
-                      <h4 className="item-title">Calories Out</h4>
-                      <p></p>
-                    </div>
-
-                    <div className="item">
-                      <h4 className="item-title">Calories In/Out Chart</h4>
-                      <p></p>
-                    </div>
-
-                    <div className="item">
-                      <h4 className="item-title">Calories In/Out Chart</h4>
-                      <p></p>
-                    </div>
-
-                    <div className="item">
-                      <h4 className="item-title">Last Meal</h4>
-                      <p></p>
-                    </div>
-
-                    <div className="item">
-                      <h4 className="item-title">Last Exercise</h4>
-                      <p></p>
-                    </div>
-
-                    <div className="item">
-                      <h4 className="item-title">Sleep</h4>
-                      <p></p>
-                    </div>
-
-                    <div className="item">
-                      <h4 className="item-title">Water</h4>
-                      <p></p>
-                    </div>
-
-
-                  </div>
-                </div>
-              </article>
+              </div>
             </div>
+
+
+
+
+
+
+
+            //
+            // <div>
+            //   <article className="post">
+            //     <div className="container">
+            //
+            //       <div className="columns">
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">This is the UserThumbnail</h4>
+            //           <UserThumbnail user={user} />
+            //           {isAuthenticated() && <button onClick={this.handleDelete}>Delete</button>}
+            //         </div>
+            //       </div>
+            //     </div>
+            //   </article>
+            //
+            //   <article className="post">
+            //     <div className="container">
+            //       <h3>Your Daily Statistics</h3>
+            //       <div className="columns quarters">
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Calories In</h4>
+            //           <CalsInCalsOut user={user} />
+            //           <p></p>
+            //         </div>
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Calories Out</h4>
+            //           <p></p>
+            //         </div>
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Calories In/Out Chart</h4>
+            //           <p></p>
+            //         </div>
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Calories In/Out Chart</h4>
+            //           <p></p>
+            //         </div>
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Last Meal</h4>
+            //           <p></p>
+            //         </div>
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Last Exercise</h4>
+            //           <p></p>
+            //         </div>
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Sleep</h4>
+            //           <p></p>
+            //         </div>
+            //
+            //         <div className="item">
+            //           <h4 className="item-title">Water</h4>
+            //           <p></p>
+            //         </div>
+            //
+            //
+            //       </div>
+            //     </div>
+            //   </article>
+            // </div>
             :
             <p> Please wait..</p>}
         </div>

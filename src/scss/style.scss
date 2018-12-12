@@ -1,25 +1,101 @@
-* {
-font-family: 'Hind', sans-serif!important;
+// * {
+//   font-family: 'Hind', sans-serif!important;
+// }
+
+.fa-plus:before {
+  font-size: 24px;
+
 }
+
+.fa-plus:after {
+  font-size: 34px;
+}
+
+.keyname {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.valuename {
+  font-size: 1.5em;
+}
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
+
+
 .homepage {
-  background-image: url('https://imgur.com/Ppo9wd5.png');
+  background-image: url('https://imgur.com/vIGSyLv.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
 
-.avocado {
-  height: 50vh;
-  margin-left: 200px;
-  background-image: url('https://cdn4.iconfinder.com/data/icons/food-outline-1/100/pack-14-512.png');
-   background-repeat: no-repeat;
-   background-size: contain;
-}
+.avocado-body {
+  background-image: url('https://imgur.com/Ppo9wd5.png');
+  }
+
+  .stat-val {
+    font-size: 1.5em;
+    padding: 20px 0 20px 0;
+    font-weight: bold;
+  }
+
+  .stat-key {
+    font-size: .75em;
+    font-weight: 200
+  }
+
+  .stat-unit {
+    font-size: .375em;
+    padding-top: 20px;
+    font-weight: bold;
+  }
+
+  .plaintext {
+    font-size: .375em;
+    padding-top: 20px;
+    font-weight: bold;
+  }
+
+  .section.profile-heading .column.is-2-tablet.has-text-centered + .has-text-centered {
+    border-left: 1px dotted rgba(0, 0, 0, .2);
+  }
+
+  .container.profile {
+    margin-top: 1%;
+  }
+
+  .control.is-pulled-left span.select {
+    margin-right: 5px;
+    border-radius: 2px;
+  }
+
+  .modal-card .content h1 {
+    padding: 40px 10px 10px;
+    border-bottom: 1px solid #dadada
+  }
+
+  .container.profile .profile-options .tabs ul li.link a {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #F1F1F1;
+  }
+
+
+
 h1.title.on-home {
-  margin-top: 147px;
+  margin-top: -150px;
+  margin-left: -30px;
 }
 .hero.is-info .title {
   color: black;
 }
 .hero.is-info .subtitle {
     color: black;
+}
+.todays-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
 }
