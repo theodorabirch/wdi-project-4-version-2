@@ -5273,6 +5273,10 @@ react-dom@^16.3.2:
     prop-types "^15.6.2"
     scheduler "^0.11.2"
 
+react-font-awesome@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-font-awesome/-/react-font-awesome-1.0.3.tgz#c4c67cc0038c2288d35f02d0a952d41ece2a16e0"
+
 react-fontawesome@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/react-fontawesome/-/react-fontawesome-1.6.1.tgz#eddce17e7dc731aa09fd4a186688a61793a16c5c"
