@@ -321,11 +321,22 @@ const workoutData = [
     date: '2018-12-05T00:00:00.009Z',
     exercise: exerciseIds[0],
     duration: 60
+  },
+  {
+    user: userIds[0],
+    date: '2018-12-05T00:00:00.009Z',
+    exercise: exerciseIds[2],
+    duration: 45
   }, {
     user: userIds[1],
     date: '2018-12-06T00:00:00.009Z',
     exercise: exerciseIds[1],
-    duration: 60
+    duration: 45
+  }, {
+    user: userIds[1],
+    date: '2018-12-06T00:00:00.009Z',
+    exercise: exerciseIds[2],
+    duration: 30
   }
 ];
 

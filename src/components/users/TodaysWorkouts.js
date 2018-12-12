@@ -21,10 +21,6 @@ export default function TodaysWorkouts({ user }) {
 
 
 
-
-
-
-
 /* //at the top of the page have a div tat returns todays Date
 //the back button takes away one day to todays date
 //the forward button adds one day
