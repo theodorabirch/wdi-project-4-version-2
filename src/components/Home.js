@@ -4,7 +4,7 @@ import { isAuthenticated, decodeToken } from '../lib/auth';
 function Home() {
   return (
     <div className="container">
-      <section className="hero is-info is-fullheight">
+      <section className="hero is-fullheight">
         <div className="hero-body homepage">
           <div className="container has-text-centered">
             <div className="container avocado ">

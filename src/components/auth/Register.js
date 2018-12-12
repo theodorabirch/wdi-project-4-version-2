@@ -32,27 +32,34 @@ class Register extends React.Component {
             <div className="sep"></div>
 
             <div className="inputs">
-              <input id="input-name" type="name" name="forename" placeholder="Forename" onChange={this.handleChange}/>
+              <div className='mulipleInput'>
+                <input className="input" type="name" name="forename" placeholder="Forename" onChange={this.handleChange}/>
 
-              <input id="input-name" type="name" name="surname" placeholder="Surname" onChange={this.handleChange}/>
+                <input className="input" type="name" name="surname" placeholder="Surname" onChange={this.handleChange}/>
+              </div>
+              <input className="input" type="username" name="username" placeholder="Username" onChange={this.handleChange}/>
 
-              <input id="input-auth" type="username" name="username" placeholder="Username" onChange={this.handleChange}/>
+              <input className="input" type="email" name="email" placeholder="e-mail" onChange={this.handleChange} autoFocus />
 
-              <input id="input-auth" type="email" name="email" placeholder="e-mail" onChange={this.handleChange} autoFocus />
+              <input className="input" type="password" name="password" placeholder="Password" onChange={this.handleChange} />
 
-              <input id="input-auth" type="password" name="password" placeholder="Password" onChange={this.handleChange} />
+              <input className="input" type="text" name="profilePicture" placeholder="https://www..." onChange={this.handleChange} />
+              <div className='mulipleInput'>
 
-              <input id="input-auth" type="text" name="profilePicture" placeholder="https://" onChange={this.handleChange} />
+                <input className="input" type="number" name="age" placeholder="Age" onChange={this.handleChange}/>
 
-              <input id="input-number" type="number" name="age" placeholder="Age" onChange={this.handleChange}/>
-              <input id="input-number" type="number" name="weight" placeholder="Weight (kg)" onChange={this.handleChange}/>
+                <input className="input" type="number" name="weight" placeholder="Weight (kg)" onChange={this.handleChange}/>
 
-              <input id="input-number" type="number" name="height" placeholder="Height (cm)" onChange={this.handleChange}/>
-
-              <div className="checkboxy">
+                <input className="input" type="number" name="height" placeholder="Height (cm)" onChange={this.handleChange}/>
+              </div>
+              {/* <div className="checkboxy">
                 <input name="Male" value="Male" type="checkbox" /><label className="terms">Male</label>
                 <input name="Female"  value="Female" type="checkbox" /><label className="terms">Female</label>
-              </div>
+              </div> */}
+              <select className='select' name="sex">
+                <option value='Male'>Male</option>
+                <option value='Female'>Female</option>
+              </select>
 
               <button id="submit" className="button is-primary"> Register</button>
             </div>
