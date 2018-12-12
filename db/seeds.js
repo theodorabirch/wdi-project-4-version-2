@@ -59,18 +59,52 @@ const foodData = [
     _id: foodIds[0],
     name: 'Chocolate Almonds',
     kCalsPer100g: 594,
-    proteinPer100g: 18,
-    carbsPer100g: 28,
-    fatPer100g: 48
-  }, {
+    proteinPer100g: 18.0,
+    carbsPer100g: 28.0,
+    fatPer100g: 48.0
+  },
+  {
     _id: foodIds[1],
     name: 'Yoghurt',
     kCalsPer100g: 63,
     proteinPer100g: 5.3,
-    carbsPer100g: 7,
+    carbsPer100g: 7.0,
     fatPer100g: 1.5
+  },
+  {
+    _id: foodIds[2],
+    name: 'Avocado',
+    kCalsPer100g: 227,
+    proteinPer100g: 2.7,
+    carbsPer100g: 2.8,
+    fatPer100g: 21.0
+  },
+  {
+    _id: foodIds[3],
+    name: 'Egg',
+    kCalsPer100g: 143,
+    proteinPer100g: 13.0,
+    carbsPer100g: 0.3,
+    fatPer100g: 9.5
+  },
+  {
+    _id: foodIds[4],
+    name: 'Smoked Salmon',
+    kCalsPer100g: 117,
+    proteinPer100g: 18.0,
+    carbsPer100g: 0.0,
+    fatPer100g: 4.3
+  },
+  {
+    _id: foodIds[5],
+    name: 'Gouda',
+    kCalsPer100g: 356,
+    proteinPer100g: 25.0,
+    carbsPer100g: 2.2,
+    fatPer100g: 27.0
   }
 ];
+
 
 const mealData = [
   {
@@ -107,15 +141,18 @@ const exerciseData = [
   {
     _id: exerciseIds[0],
     type: 'Cycling',
-    intensity: 7.5
+    intensity: 7.5,
+    icon: 'fas fa-bicycle'
   }, {
     _id: exerciseIds[1],
     type: 'Jogging',
-    intensity: 7.0
+    intensity: 7.0,
+    icon: 'fas fa-running'
   }, {
     _id: exerciseIds[2],
     type: 'Swimming (Freestyle)',
-    intensity: 5.8
+    intensity: 5.8,
+    icon: 'fas fa-swimmer'
   }
 ];
 

@@ -28,7 +28,6 @@ class Header extends React.Component {
             {!isAuthenticated() && <Link className="navbar-item" to="/login">
               Login
             </Link>}
-
             {!isAuthenticated() &&<Link className="navbar-item" to="/register">
               Signup
             </Link>}
