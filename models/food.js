@@ -5,7 +5,8 @@ const foodSchema = mongoose.Schema({
   kCalsPer100g: Number,
   proteinPer100g: Number,
   carbsPer100g: Number,
-  fatPer100g: Number
+  fatPer100g: Number,
+  image: String
 });
 
 module.exports = mongoose.model('Food', foodSchema);

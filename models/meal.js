@@ -26,6 +26,7 @@ mealSchema.pre('find', function() {
 
 mealSchema.virtual('totalCalories')
   .get(function() {
+    console.log('this is totalCalories', this);
     return this.servings.reduce((total, serving) =>
       total + (serving.food.kCalsPer100g * serving.quantity), 0);
   });

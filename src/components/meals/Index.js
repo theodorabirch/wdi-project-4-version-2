@@ -32,9 +32,9 @@ export default class MealsIndex extends React.Component {
         {mealArray
           ?
           <div className="columns is-multiline">
-            <section className="container">
+            <section className="container index-container">
 
-              <div className="columns features">
+              <div className="columns is-multiline features">
                 {mealArray.map(meal =>
                   <div key={meal._id} className="column is-4">
                     <div className="card is-shady">
@@ -42,27 +42,26 @@ export default class MealsIndex extends React.Component {
                       <div className="card-image">
                         <figure className="image is-4by4">
                           {isAuthenticated() && <Link to={`/meal/${meal._id}`}>
-                            <img src="https://imgur.com/8dhZVLm.png" alt="Placeholder image" className="modal-button" data-target="modal-image2"/>
+                            <img src="https://imgur.com/lVOcmDm.png" alt="Placeholder image" className="modal-button" data-target="modal-image2"/>
                           </Link>}
 
                         </figure>
                       </div>
 
-                      <div className="card-content">
+                      <div className="card-content index-content">
                         <div className="content">
-                          <h2>{meal.name}</h2>
-                          <h3>{meal.date}</h3>
-                          <h4>{meal.totalCalories}</h4>
-                          { meal.servings.map(serving =>
-                            <div className="servings" key={serving._id}>
-                              <p>{serving.food.name}</p>
-                            </div>)
-                          }
-                          {isAuthenticated() && <Link className="button is-link modal-button" to={`/meal/${meal._id}/edit`}>Edit</Link>}
+                          <span className="stat-val">{meal.name}</span><br />
+                          <span className="date-val">{meal.date.split('-')[2].substring(0, 2)}/{meal.date.split('-')[1]}/{meal.date.split('-')[0]} </span><br /><br />
+                          <div className="card">
+                            <h4><i className="fas fa-fire cal-burn"></i> {meal.totalCalories}<span className="stat-unit">kCals</span></h4>
+                            {meal.servings.map(serving =>
+                              <div className="servings" key={serving._id}>
+                                <p><i className="fas fa-utensils"></i>  {serving.quantity}00g {serving.food.name}</p>
+                              </div>)
+                            }
+                            {isAuthenticated() && <Link className="button is-link modal-button" to={`/meal/${meal._id}/edit`}>Edit</Link>}
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        {isAuthenticated() && <Link to={`/meal/${meal._id}`}><button>Show</button></Link>}
                       </div>
                     </div>
                   </div>

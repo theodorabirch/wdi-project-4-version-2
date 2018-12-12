@@ -5,15 +5,14 @@ export default function TodaysWorkouts({ user }) {
   return(
     <div>
 
-      <div className="todays-stats">
+      <div className="todays-meals">
         {user.workouts.map(workout =>
-          <div key={workout._id}>
-            <p> {workout.exercise.type}</p>
-            <p> {workout.totalCaloriesBurned}</p>
+          <div className="card" key={workout._id}>
+            <p className="keyname">{workout.exercise.type} <i className={workout.exercise.icon}></i></p>
+            <p className="valuename"><i className="fas fa-fire cal-burn"></i>{Math.round(workout.totalCaloriesBurned)}<span className="stat-unit">kCals</span></p><br />
           </div>
         )}
       </div>
-
 
     </div>
   );
