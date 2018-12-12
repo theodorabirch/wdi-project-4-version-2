@@ -6,7 +6,7 @@ import { authorizationHeader, isAuthenticated, deleteToken } from '../../lib/aut
 import UserThumbnail from './UserThumbNail';
 import TodaysMeals from './TodaysMeals';
 import TodaysWorkouts from './TodaysWorkouts';
-import CalsInCalsOut from './CalsInCalsOut';
+import CalsOut from './CalsOut';
 // import DailyProgress from './DailyProgress';
 
 export default class UserShow extends React.Component {
@@ -69,7 +69,7 @@ export default class UserShow extends React.Component {
                       <div className='has-text-centered'>
                         <p className='has-text-centered'>
                           <button> <i className="fas fa-chevron-left"> </i></button>
-                          <strong>Date Goes Here</strong>
+                          <strong> 13 / 12 / 2018</strong>
                           <button> <i className="fas fa-chevron-right"> </i></button>
                         </p>
                       </div>
@@ -88,8 +88,9 @@ export default class UserShow extends React.Component {
 
                       <div className="tile is-parent">
                         <article className="tile is-child box">
-                          <p className="title">59k</p>
+                          <p className="title">2</p>
                           <p className="subtitle">Calories Out</p>
+                          <CalsOut user={user} />
                         </article>
                       </div>
 
@@ -124,6 +125,7 @@ export default class UserShow extends React.Component {
 
                       <div className="tile is-parent">
                         <article className="tile is-child box">
+                          <p className="title">2</p>
                           <p className="subtitle">Workouts</p>
                           <TodaysWorkouts user={user} />
                         </article>

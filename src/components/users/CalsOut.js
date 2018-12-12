@@ -1,26 +1,19 @@
 import React from 'react';
 
-export default function TodaysWorkouts({ user }) {
-  console.log('this is user.workouts', user.workouts);
+export default function CalsOut({ user }) {
+
   return(
     <div>
-
       <div className="todays-stats">
         {user.workouts.map(workout =>
           <div key={workout._id}>
-            <p> {workout.exercise.type}</p>
-            <p> {workout.totalCaloriesBurned}</p>
+            <p> {workout.totalCaloriesBurned + workout.baseCaloriesBurned}</p>
           </div>
         )}
       </div>
-
-
     </div>
   );
 }
-
-
-
 
 
 
