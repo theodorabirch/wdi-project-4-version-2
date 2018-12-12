@@ -15,7 +15,13 @@ export default function CalsInCalsOut({ user }) {
         </div>
       </div>
       <div className="cals-out-box">
-        {}
+        <div className="item-cals">
+          {user.workouts.map(workout =>
+            <div key={workout._id}>
+              <p>{workout.totalCaloriesBurned}</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
