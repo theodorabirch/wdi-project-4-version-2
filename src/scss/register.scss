@@ -34,12 +34,21 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 5px;
+    margin-top: 20px;
 }
 
 #signup .header p {
     color: #8f8f8f;
     font-size: 14px;
     font-weight: 300;
+
+}
+.select {
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+    vertical-align: top;
+    height: 37px; 
 }
 
 #signup .sep {
