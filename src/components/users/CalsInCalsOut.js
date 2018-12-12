@@ -18,7 +18,7 @@ export default function CalsInCalsOut({ user }) {
         <div className="item-cals">
           {user.workouts.map(workout =>
             <div key={workout._id}>
-              <p>{workout}</p>
+              <p> {workout.totalCaloriesBurned}</p>
             </div>
           )}
         </div>
@@ -26,9 +26,6 @@ export default function CalsInCalsOut({ user }) {
     </div>
   );
 }
-
-
-
 
 
 
