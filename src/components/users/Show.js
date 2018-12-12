@@ -65,11 +65,11 @@ export default class UserShow extends React.Component {
 
 
                   <section>
-                    <div className='box has-text-centered'>
+                    <div id="datebar" className='box has-text-centered'>
                       <div className='has-text-centered'>
                         <p className='has-text-centered'>
                           <button> <i className="fas fa-chevron-left"> </i></button>
-                          <strong> 13 / 12 / 2018</strong>
+                          <strong>     13 / 12 / 2018     </strong>
                           <button> <i className="fas fa-chevron-right"> </i></button>
                         </p>
                       </div>
@@ -87,7 +87,7 @@ export default class UserShow extends React.Component {
                       </div>
 
                       <div className="tile is-parent">
-                        <article className="tile is-child box">
+                        <article id="square" className="tile is-child box">
                           <p className="title">2</p>
                           <p className="subtitle">Calories Out</p>
                           <CalsOut user={user} />

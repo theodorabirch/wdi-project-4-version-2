@@ -32,27 +32,47 @@ export default class MealsIndex extends React.Component {
         {mealArray
           ?
           <div className="columns is-multiline">
-            {mealArray.map(meal =>
-              <div key={meal._id}>
+            <section className="container">
 
-                <p>{meal.name}</p>
-                <p>{meal.date}</p>
-                <p>{meal.totalCalories}</p>
+              <div className="columns features">
+                {mealArray.map(meal =>
+                  <div key={meal._id} className="column is-4">
+                    <div className="card is-shady">
 
-                { meal.servings.map(serving =>
-                  <div className="servings" key={serving._id}>
-                    <p>{serving.food.name}</p>
-                  </div>)
-                }
-                <div>
-                  {isAuthenticated() && <Link to={`/meal/${meal._id}`}><button>Show</button></Link>}
-                  {isAuthenticated() && <Link to={`/meal/${meal._id}/edit`}><button>Edit</button></Link>}
-                </div>
+                      <div className="card-image">
+                        <figure className="image is-4by4">
+                          {isAuthenticated() && <Link to={`/meal/${meal._id}`}>
+                            <img src="https://imgur.com/8dhZVLm.png" alt="Placeholder image" className="modal-button" data-target="modal-image2"/>
+                          </Link>}
+
+                        </figure>
+                      </div>
+
+                      <div className="card-content">
+                        <div className="content">
+                          <h2>{meal.name}</h2>
+                          <h3>{meal.date}</h3>
+                          <h4>{meal.totalCalories}</h4>
+                          { meal.servings.map(serving =>
+                            <div className="servings" key={serving._id}>
+                              <p>{serving.food.name}</p>
+                            </div>)
+                          }
+                          {isAuthenticated() && <Link className="button is-link modal-button" to={`/meal/${meal._id}/edit`}>Edit</Link>}
+                        </div>
+                      </div>
+                      <div>
+                        {isAuthenticated() && <Link to={`/meal/${meal._id}`}><button>Show</button></Link>}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
+            </section>
           </div>
 
           :
+
           <p> Await your meal..</p>}
       </div>
     );
