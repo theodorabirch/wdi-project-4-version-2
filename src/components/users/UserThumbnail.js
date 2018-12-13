@@ -21,8 +21,8 @@ function UserThumbnail({ user }) {
           <div className='column is-2-tablet is-10-mobile name'>
             <p>
               <span className='title is-bold'>{ user.forename } { user.surname }</span>
-              <span className='button is-primary is-outlined'>
-                {isAuthenticated() && <Link to={`/user/${user._id}/edit`}><button>Edit Profile</button></Link>}
+              <span className=''>
+                {isAuthenticated() && <Link to={`/user/${user._id}/edit`}><button className = "button is-link modal-button">Edit Profile</button></Link>}
               </span>
             </p>
 

@@ -7,15 +7,13 @@ export default function CalsOut({ user }) {
       <div className="todays-stats">
         {user.workouts.map(workout =>
           <div key={workout._id}>
-            <p> {workout.totalCaloriesBurned + workout.baseCaloriesBurned}</p>
+            <p className="title"><i className="fas fa-fire cal-burn"></i>{Math.round(workout.totalCaloriesBurned + workout.baseCaloriesBurned)}<span className="stat-unit">kCals</span></p>
           </div>
         )}
       </div>
     </div>
   );
 }
-
-
 
 
 

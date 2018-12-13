@@ -3,6 +3,39 @@
 //   font-family: 'Hind', sans-serif!important;
 // }
 
+#square {
+  height: 40vh;
+}
+
+#datebar {
+  margin: 20px 0 20px 0;
+}
+
+.date-val {
+  font-size: 1.5em;
+  font-weight: 200
+}
+
+.cal-burn {
+  color: red;
+}
+
+.cal-eat {
+  color: steelblue;
+}
+
+.meter {
+  font-size: 5em;
+}
+
+.index-container {
+  margin-top: 40px;
+}
+
+.index-content {
+  height: 45vh;
+}
+
 .fa-plus:before {
   font-size: 24px;
 
@@ -36,7 +69,8 @@ $fa-font-path: "~font-awesome/fonts";
 }
 
 .avocado-body {
-  background-image: url('https://imgur.com/Ppo9wd5.png');
+  // background-image: url('https://imgur.com/Ppo9wd5.png');
+  background-color: LightSkyBlue	;
   }
 
   .stat-val {
@@ -89,6 +123,7 @@ $fa-font-path: "~font-awesome/fonts";
 
 
 h1.title.on-home {
+  // background-color: tomato;
   margin-top: -250px;
   margin-left: -30px;
   color: white;

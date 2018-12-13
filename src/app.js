@@ -8,6 +8,7 @@ import Home from './components/Home';
 import UserShow from './components/users/Show';
 import UserEdit from './components/users/Edit';
 import MealIndex from './components/meals/Index';
+import MealNew from './components/meals/New';
 import MealShow from './components/meals/Show';
 import MealEdit from './components/meals/Edit';
 import WorkoutsIndex from './components/workouts/Index';
@@ -31,6 +32,7 @@ class App extends React.Component {
             <Route path='/user/:id' component={UserShow}/>
             <Route path='/login' component={Login}/>
             <Route exact path='/register' component={Register}/>
+            <Route path='/meals/new' component={MealNew}/>
             <Route path='/meals' component={MealIndex}/>
             <Route path='/meal/:id/edit' component={MealEdit}/>
             <Route path='/meal/:id' component={MealShow}/>

@@ -9,7 +9,7 @@ export default function TodaysMeals({ user }) {
         {user.meals.map(meal =>
           <div className="card" key={meal._id}>
             <p className="keyname">{meal.name}</p>
-            <p className="valuename">{meal.totalCalories}<span className="stat-unit">kCals</span></p><br />
+            <p className="valuename"><i className="cal-eat fas fa-utensils"></i> {meal.totalCalories}<span className="stat-unit">kCals</span></p><br />
           </div>
         )}
       </div>
@@ -17,13 +17,6 @@ export default function TodaysMeals({ user }) {
     </div>
   );
 }
-
-
-
-
-
-
-
 
 /* //at the top of the page have a div tat returns todays Date
 //the back button takes away one day to todays date

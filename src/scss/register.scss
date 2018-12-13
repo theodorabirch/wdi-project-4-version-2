@@ -3,7 +3,6 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial;
     min-height: 800px;
 }
-
 .form-container {
   padding-top: 15vh;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8be8cf), color-stop(100%,#cdeb8b));
@@ -11,7 +10,6 @@ body {
     max-width: 406px;
     margin: 0 auto;
 }
-
 #signup {
     padding: 0px 25px 25px;
     background: #fff;
@@ -24,11 +22,9 @@ body {
     display: table;
     position: static;
 }
-
 #signup .header {
     margin-bottom: 20px;
 }
-
 #signup .header h3 {
     color: #333333;
     font-size: 24px;
@@ -36,28 +32,24 @@ body {
     margin-bottom: 5px;
     margin-top: 20px;
 }
-
 #signup .header p {
     color: #8f8f8f;
     font-size: 14px;
     font-weight: 300;
-
 }
 .select {
     display: inline-block;
     max-width: 100%;
     position: relative;
     vertical-align: top;
-    height: 37px; 
+    height: 37px;
 }
-
 #signup .sep {
     height: 1px;
     background: #e8e8e8;
     width: 406px;
     margin: 0px -25px;
 }
-
 #signup .inputs {
     margin-top: 25px;
     display: flex;
@@ -65,13 +57,11 @@ body {
     flex-direction: column;
     min-height: 400px;
 }
-
 .mulipleInput {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
-
 #signup .input {
   background-color: white;
 }

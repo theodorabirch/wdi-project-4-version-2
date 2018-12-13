@@ -41,7 +41,10 @@ class Header extends React.Component {
               Exercise Logs
             </Link>}
             {isAuthenticated() && <Link className="navbar-item" to={'/meals'}>
-                Meals Index
+              Meals Index
+            </Link>}
+            {isAuthenticated() && <Link className="navbar-item" to={'/meals/new'}>
+              Add Meal
             </Link>}
             { isAuthenticated() && <a className="navbar-item" onClick={this.handleLogout}>
               Logout
