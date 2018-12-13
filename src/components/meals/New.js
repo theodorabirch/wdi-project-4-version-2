@@ -4,7 +4,7 @@ import axios from 'axios';
 import { authorizationHeader } from '../../lib/auth';
 
 
-export default class NewMeal extends React.Component {
+export default class MealNew extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -22,49 +22,34 @@ export default class NewMeal extends React.Component {
   render() {
     return(
       <section>
-        <form onSubmit={this.handleSubmit}>
-          <label>Strength</label>
-          <input onChange={this.handleChange}
-            value={this.state.strength || ''}
-            name="strength"
-          />
-          <label>Brand</label>
-          <input onChange={this.handleChange}
-            value={this.state.brand || ''}
-            name="brand"
-          />
-          <label>Country of Origin</label>
-          <input onChange={this.handleChange}
-            value={this.state.countrOfOrigin || ''}
-            name="countrOfOrigin"
-          />
-          <label>Flavour</label>
-          <input onChange={this.handleChange}
-            value={this.state.flavour || ''}
-            name="flavour"
-          />
-          <label>Tasting Notes</label>
-          <input onChange={this.handleChange}
-            value={this.state.tastingNotes || ''}
-            name="tastingNotes"
-          />
-          <label>Price in Asda</label>
-          <input onChange={this.handleChange}
-            value={this.state.priceInAsda || ''}
-            name="priceInAsda"
-          />
-          <label>Price in Waitrose</label>
-          <input onChange={this.handleChange}
-            value={this.state.priceInWaitrose || ''}
-            name="priceInWaitrose"
-          />
-          <label>Image</label>
-          <input onChange={this.handleChange}
-            value={this.state.image || ''}
-            name="image"
-          />
-          <button>Add your meal</button>
-        </form>
+        <div className="form-container">
+          <form onSubmit={this.handleSubmit} id="signup">
+            <div className="header">
+              <h3>Log A Meal</h3>
+            </div>
+
+            <div className="sep"></div>
+
+            <div className="inputs">
+              <div className='mulipleInput'>
+                <input className="input" type="date" name="date" placeholder="DD / MM / YYYY" onChange={this.handleChange} value={this.state.date || ''}/>
+              </div>
+
+              <input className="input" type="food" name="food" placeholder="Avocado" onChange={this.handleChange} value={this.state.food || ''}/>
+
+              <input className="input" type="number" name="quantity" onChange={this.handleChange} value={this.state.quantity || ''} autoFocus />
+
+              <select className='select' name="name" onChange={this.handleChange} value={this.state.name || ''}>
+                <option value='Breakfast'>Breakfast</option>
+                <option value='Lunch'>Lunch</option>
+                <option value='Dinner'>Dinner</option>
+                <option value='Snack'>Snack</option>
+              </select>
+
+              <button id="submit" className="button is-primary">Confirm</button>
+            </div>
+          </form>
+        </div>
       </section>
     );
   }

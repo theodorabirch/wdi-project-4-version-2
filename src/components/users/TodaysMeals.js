@@ -9,7 +9,7 @@ export default function TodaysMeals({ user }) {
         {user.meals.map(meal =>
           <div className="card" key={meal._id}>
             <p className="keyname">{meal.name}</p>
-            <p className="valuename"><i className="fas fa-fire cal-burn"></i>{meal.totalCalories}<span className="stat-unit">kCals</span></p><br />
+            <p className="valuename"><i className="cal-eat fas fa-utensils"></i> {meal.totalCalories}<span className="stat-unit">kCals</span></p><br />
           </div>
         )}
       </div>

@@ -43,7 +43,7 @@ export default class WorkoutIndex extends React.Component {
                       <div className="card-image">
                         <figure className="image is-4by4">
                           {isAuthenticated() && <Link to={`/workout/${workout._id}`}>
-                            <img src="https://im3.ezgif.com/tmp/ezgif-3-63063d4805d9.gif" alt="Placeholder image" className="modal-button" data-target="modal-image2"/>
+                            <img src="https://im3.ezgif.com/tmp/ezgif-3-fd0f4ea1196a.gif" alt="Placeholder image" className="modal-button" data-target="modal-image2"/>
                           </Link>}
 
                         </figure>
@@ -56,9 +56,8 @@ export default class WorkoutIndex extends React.Component {
                           <div className="card">
                             <h4><i className={workout.exercise.icon}></i>
                               <span className="stat-key">{workout.duration}mins</span><br />< br/>
-                              <i className="fas fa-fire cal-burn"></i> {workout.totalCaloriesBurned}<span className="stat-unit">kCals</span></h4>
+                              <i className="fas fa-fire cal-burn"></i> {Math.round(workout.totalCaloriesBurned)}<span className="stat-unit">kCals</span></h4>
 
-                            {isAuthenticated() && <Link className="button is-link modal-button" to={`/workout/${workout._id}/edit`}>Edit</Link>}
                           </div>
                         </div>
                       </div>

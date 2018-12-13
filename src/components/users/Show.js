@@ -56,7 +56,7 @@ export default class UserShow extends React.Component {
                       <div className="container">
                         <h1 className="title">
                           <UserThumbnail user={user} />
-                          {isAuthenticated() && <button onClick={this.handleDelete}>Delete Account</button>}
+                          {isAuthenticated() && <button className="button is-link modal-button" onClick={this.handleDelete}>Delete Account</button>}
                         </h1>
                       </div>
                     </div>
@@ -90,20 +90,36 @@ export default class UserShow extends React.Component {
                       <div className="tile is-parent">
                         <article id="square" className="tile is-child box">
                           <CalsOut user={user} />
+                          <p>
+                            <i className="fas fa-tachometer-alt meter"></i>
+                          </p>
                           <p className="subtitle">Calories Out</p>
                         </article>
                       </div>
 
                       <div className="tile is-parent">
                         <article className="tile is-child box">
-                          <p className="title">Chart -- </p>
-                          <p className="subtitle">Chart.js</p>
+                          <p className="title">Chart.js</p>
+                          <p className="subtitle">Daily Progress</p>
+                          <div className="todays-meals">
+                            <div className="card">
+                              <img src="https://imgur.com/XpUgXTi.png"/>
+                            </div>
+                          </div>
                         </article>
                       </div>
+
+
+
                       <div className="tile is-parent">
                         <article className="tile is-child box">
-                          <p className="title"></p>
-                          <p className="subtitle">Chart.js</p>
+                          <p className="title">Chart.js</p>
+                          <p className="subtitle">Macronutrients</p>
+                          <div className="todays-meals">
+                            <div className="card">
+                              <img src="https://imgur.com/XpUgXTi.png"/>
+                            </div>
+                          </div>
                         </article>
                       </div>
 
@@ -125,9 +141,9 @@ export default class UserShow extends React.Component {
 
                       <div className="tile is-parent">
                         <article className="tile is-child box">
-                          <p className="title">1</p>
+                          <p className="title">2</p>
                           <p className="subtitle">Workouts</p>
-                          <TodaysWorkouts user={user} />
+                          <TodaysWorkouts user={ user} />
                         </article>
                       </div>
 
@@ -135,12 +151,22 @@ export default class UserShow extends React.Component {
                         <article className="tile is-child box">
                           <p className="title">7h 45</p>
                           <p className="subtitle">Sleep</p>
+                          <div className="todays-meals">
+                            <div className="card">
+                              <img src="https://imgur.com/a8w9daN.png"/>
+                            </div>
+                          </div>
                         </article>
                       </div>
                       <div className="tile is-parent">
                         <article className="tile is-child box">
                           <p className="title">2250ml</p>
                           <p className="subtitle">Water</p>
+                          <div className="todays-meals">
+                            <div className="card">
+                              <img src="https://image.flaticon.com/icons/png/512/432/432257.png"/>
+                            </div>
+                          </div>
                         </article>
                       </div>
 

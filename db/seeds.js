@@ -44,7 +44,7 @@ const userData = [
     username: 'janedoe',
     email: 'jane@app.com',
     password: 'pass',
-    profilePicture: 'https://i.imgur.com/0evCpud.jpg',
+    profilePicture: 'https://imgur.com/QdelQeC.png',
     forename: 'Jane',
     surname: 'Doe',
     age: 30,
@@ -57,7 +57,7 @@ const userData = [
     username: 'johndoe',
     email: 'john@app.com',
     password: 'pass',
-    profilePicture: 'https://i.imgur.com/0evCpud.jpg',
+    profilePicture: 'https://imgur.com/ujF96X3.png',
     forename: 'John',
     surname: 'Doe',
     age: 30,
@@ -205,13 +205,13 @@ const mealData = [
     date: '2018-12-13T00:00:00.009Z',
     servings: [{
       food: foodIds[1],
-      quantity: 2.5
+      quantity: 2
     }, {
       food: foodIds[6],
-      quantity: 1.5
+      quantity: 2
     }, {
       food: foodIds[13],
-      quantity: .5
+      quantity: 1
     }]
   }, {
     user: userIds[1],
@@ -219,13 +219,13 @@ const mealData = [
     date: '2018-12-13T00:00:00.009Z',
     servings: [{
       food: foodIds[7],
-      quantity: 1.7
+      quantity: 2
     }, {
       food: foodIds[5],
-      quantity: .6
+      quantity: 1
     }, {
       food: foodIds[8],
-      quantity: .9
+      quantity: 1
     }]
   }, {
     user: userIds[1],
@@ -233,16 +233,16 @@ const mealData = [
     date: '2018-12-13T00:00:00.009Z',
     servings: [{
       food: foodIds[11],
-      quantity: 2.1
+      quantity: 2
     },{
       food: foodIds[10],
-      quantity: .6
+      quantity: 1
     },{
       food: foodIds[3],
-      quantity: 1.5
+      quantity: 1
     },{
       food: foodIds[12],
-      quantity: .4
+      quantity: 1
     }]
   }, {
     user: userIds[1],
@@ -250,7 +250,7 @@ const mealData = [
     date: '2018-12-13T00:00:00.009Z',
     servings: [{
       food: foodIds[0],
-      quantity: 1.5
+      quantity: 2
     }]
   }, {
     user: userIds[0],
@@ -258,7 +258,7 @@ const mealData = [
     date: '2018-12-13T00:00:00.009Z',
     servings: [{
       food: foodIds[8],
-      quantity: 1.6
+      quantity: 2
     }, {
       food: foodIds[3],
       quantity: 2
@@ -272,10 +272,10 @@ const mealData = [
       quantity: 1
     }, {
       food: foodIds[3],
-      quantity: 1.5
+      quantity: 2
     }, {
       food: foodIds[2],
-      quantity: 1.3
+      quantity: 1
     }]
   }, {
     user: userIds[0],
@@ -309,7 +309,7 @@ const exerciseData = [
     icon: 'fas fa-running'
   }, {
     _id: exerciseIds[2],
-    type: 'Swimming (Freestyle)',
+    type: 'Swimming',
     intensity: 5.8,
     icon: 'fas fa-swimmer'
   }
@@ -318,23 +318,23 @@ const exerciseData = [
 const workoutData = [
   {
     user: userIds[0],
-    date: '2018-12-05T00:00:00.009Z',
+    date: '2018-12-13T00:00:00.009Z',
     exercise: exerciseIds[0],
     duration: 60
   },
   {
     user: userIds[0],
-    date: '2018-12-05T00:00:00.009Z',
+    date: '2018-12-13T00:00:00.009Z',
     exercise: exerciseIds[2],
     duration: 45
   }, {
     user: userIds[1],
-    date: '2018-12-06T00:00:00.009Z',
+    date: '2018-12-13T00:00:00.009Z',
     exercise: exerciseIds[1],
     duration: 45
   }, {
     user: userIds[1],
-    date: '2018-12-06T00:00:00.009Z',
+    date: '2018-12-13T00:00:00.009Z',
     exercise: exerciseIds[2],
     duration: 30
   }

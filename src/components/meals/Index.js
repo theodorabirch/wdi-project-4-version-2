@@ -51,7 +51,8 @@ export default class MealsIndex extends React.Component {
                       <div className="card-content index-content">
                         <div className="content">
                           <span className="stat-val">{meal.name}</span><br />
-                          <span className="date-val">{meal.date.split('-')[2].substring(0, 2)}/{meal.date.split('-')[1]}/{meal.date.split('-')[0]} </span><br /><br />
+                          <span className="date-val">{meal.date.split('-')[2].substring(0, 2)}/{meal.date.split('-')[1]}/{meal.date.split('-')[0]} </span><br />
+                          {isAuthenticated() && <Link className="button is-link modal-button" to={`/meal/${meal._id}/edit`}>Edit</Link>}<br/><br/>
                           <div className="card">
                             <h4><i className="fas fa-fire cal-burn"></i> {meal.totalCalories}<span className="stat-unit">kCals</span></h4>
                             {meal.servings.map(serving =>
@@ -59,7 +60,6 @@ export default class MealsIndex extends React.Component {
                                 <p><i className="fas fa-utensils"></i>  {serving.quantity}00g {serving.food.name}</p>
                               </div>)
                             }
-                            {isAuthenticated() && <Link className="button is-link modal-button" to={`/meal/${meal._id}/edit`}>Edit</Link>}
                           </div>
                         </div>
                       </div>
