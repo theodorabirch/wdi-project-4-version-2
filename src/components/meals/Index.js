@@ -34,9 +34,8 @@ export default class MealsIndex extends React.Component {
           <div className="columns is-multiline">
             {mealArray.map(meal =>
               <div key={meal._id}>
-
                 <p>{meal.name}</p>
-                <p>{meal.date}</p>
+                <p>{meal.date.split('-')[2].substring(0, 2)}/{meal.date.split('-')[1]}/{meal.date.split('-')[0]} </p>
                 <p>{meal.totalCalories}</p>
 
                 { meal.servings.map(serving =>
